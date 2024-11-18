@@ -17,8 +17,8 @@
             min-height: 100vh;
             background:
                 linear-gradient(to bottom,
-                    rgba(0,0,0,0.6) 0%,
-                    rgba(0,0,0,0.3) 25%,
+                    rgba(0,0,0,1) 0%,
+                    rgba(0,0,0,0.6) 25%,
                     rgba(0,0,0,0.2) 50%,
                     rgba(0,0,0,0.2) 100%),
                 url('{% static "images/img_2.png" %}') no-repeat center center fixed;
@@ -28,7 +28,8 @@
         /* Остальные стили остаются без изменений */
         .header {
             position: fixed;
-            top: 0;
+            top: 30px;
+            height: 70px;
             width: 100%;
             z-index: 1000;
             background: transparent;
@@ -37,6 +38,8 @@
             justify-content: space-between;
             align-items: center;
             transition: background-color 0.3s ease;
+            color: black;
+            
         }
 
         .header.scrolled {
@@ -45,7 +48,7 @@
         }
 
         .logo {
-            width: 100px;
+            width: 150px;
             height: auto;
         }
 
@@ -55,16 +58,19 @@
         }
 
         .nav-link {
-            text-decoration: none;
+            text-decoration:none;
             color: white;
             font-weight: 500;
             text-transform: uppercase;
             font-size: 0.9rem;
-            transition: opacity 0.3s ease;
+            transition: 0.4s;
+
         }
 
+
         .nav-link:hover {
-            opacity: 0.8;
+            transition: 0.4;
+            color: #B0397B;
         }
 
         .hero {
@@ -189,12 +195,17 @@
                 <path d="M7 10l5 5 5-5H7z"/>
             </svg>
         </div>
+        <!-- <model-viewer src="{% static 'images/deck_chair.glb'%}" alt="A 3D model" auto-rotate camera-controls background-color="#EFEFEF" style="width: 100%; height: 500px;"></model-viewer> -->
+
     </main>
+
 
     {% block content %}
     {% endblock %}
 
     {% block scripts %}
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector('.header');
