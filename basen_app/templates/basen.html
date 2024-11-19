@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseny ze stali nierdzewnej INOXline - Diamant</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- HTML остается тем же -->
+    <header class="header">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'images/ultimate_pool_creation_by_voltoq_studiotm_dribbble_removebg_preview.png' %}"
+                 alt="Diamant Logo" class="logo">
+        </a>
+        <nav class="nav-menu">
+            <a href="{% url 'basen' %}" class="nav-link">Baseny ze stali nierdzewnej</a>
+            <a href="#" class="nav-link">Serwis</a>
+            <a href="#" class="nav-link">O firmie</a>
+            <a href="#" class="nav-link">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="page-title-section">
+        <h1 class="page-title">BASENY ZE STALI NIERDZEWNEJ INOXLINE</h1>
+        <p class="page-subtitle">Nowoczesne z ponadczasową elegancją</p>
+        <div class="breadcrumbs">
+            <a href="{% url 'home' %}">Wstęp</a>
+            <span>›</span>
+            <a href="{% url 'basen' %}">Baseny ze stali nierdzewnej</a>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <img src="{% static 'images/img.png' %}" alt="Pool" class="hero-image">
+        <div class="hero-content">
+            <h2 class="hero-title">BASENY ZE STALI NIERDZEWNEJ INOXLINE</h2>
+            <p class="hero-description">Nowoczesne z ponadczasową elegancją</p>
+        </div>
+    </section>
+
+    {% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>
