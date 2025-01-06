@@ -8,3 +8,6 @@ def home(request):
 
 def basen(request):
     return render(request, 'basen.html')
+
+def contact(request):
+    return render(request, 'contact.html')
