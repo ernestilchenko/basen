@@ -24,7 +24,12 @@ SECRET_KEY = 'django-insecure-dcwl_%!2a!bu#rr)2k@27qdeqow@$2=4oqf-_tz$36n*+7a$zt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app', 'www.beyongthepool.online']
+CSRF_TRUSTED_ORIGINS = ['https://*.ngrok-free.app', 'https://www.beyongthepool.online']
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
