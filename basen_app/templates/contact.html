@@ -6,6 +6,7 @@
         <title>Kontakt</title>
 
         <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
   
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,9 +15,40 @@
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header class="header sticky-top flex-wrap justify-content-center">
+            <div class="container col-10 d-flex">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
+                    <text class="logo lora">Beyond The Pool</text>
+                </a>
+        
+                <ul class="nav d-flex align-items-center">
+                    <li class="nav-item"><a href="basen/" class="nav-link lora">RODZAJE BASENÓW</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link lora">GALERIA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link lora">PRZYKŁAD</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link lora">O FIRMIE</a></li>
+                    <li class="nav-item"><a href="contact/" class="nav-link lora">KONTAKT</a></li>
+                    
+                    <!-- Dropdown for USTAWIENIA -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link lora dropdown-toggle" href="#" id="ustawieniaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            USTAWIENIA
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ustawieniaDropdown">
+                            <li><button class="btn color btp-primary">DARK</button></li>
+                            <li><a class="dropdown-item" href="#"><select name="lang" id="">
+                                <option value="english">english</option>
+                                <option value="polish">polish</option>
+                            </select></a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
         <div class="container main-container">
-            <div class="row justify-content-between">
-                <div class="col-4 contact-info">
+            <div class="row justify-content-center">
+                <div class="col-4 col-md-6 contact-info">
                     <h1 class="company-name">Beyond The Pool</h1>
                     <div class="row label-value">
                         <p>Łódż<br>al.Politechiki 7<br>93-574 Łódż<br></p>
@@ -32,10 +64,99 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-8 col-md-6 map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19761.285628513106!2d19.453841083437013!3d51.748384893393236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471a34de8d4ae245%3A0xd4c33cde390ac40b!2zQzEyLCBhbGVqZSBQb2xpdGVjaG5pa2kgNywgOTAtMDAxIMWBw7Nkxbo!5e0!3m2!1sen!2spl!4v1736116485448!5m2!1sen!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
+        <footer class="footer lora">
+            <div class="footer-inner container d-flex h-100">
+                <div class="personal-info col-4 h-100 pt-4 d-block">
+                    <div class="location">
+                        <div class="visible">
+                            ŁÓDŹ
+                        </div>
+                        <div class="half-visible">
+                            al. Politechniki 7
+                            <p>93-590 ŁÓDŹ
+                        </div>
+                    </div>
+                    <div class="name-surname">
+                        <div class="visible">
+                            Danylo Moskovchuk
+                        </div>
+                        <div class="half-visible">
+                            +48 739 064 354
+                            <p>danylomoskovchuk@gmail.com
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <div class="send-form container pt-4 col-5 h-100">
+                    <div class="form container">
+                        <div class="form-title container visible">
+                            NAPISZ DO NAS
+                        </div>
+                        <div class="inputs">
+                            <input type="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
+                            <textarea id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
+                            <p id="enhancedCharCount">Pozostało 200 symbołów</p>
+                        
+                        </div>
+                        <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
+                            <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
+                        </div>
+                    </div>
+                    
+                   
+    
+                    
+        
+                </div>
+                <div class="socials d-block lora pt-4 col-3 h-100">
+                    <div class="socials-title visible  w-100">Bądż na bieżąco</div>
+                    <div class="social my-1  d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img  src="{%static 'images/linkedin.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="social my-1 d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/instagram.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="social my-1 d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/facebook.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="social my-2 d-flex align-items-center container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/youtube.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">YouTube</a>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+            
+    
+        </footer>
     </body>
 </html>

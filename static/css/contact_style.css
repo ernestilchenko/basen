@@ -1,20 +1,38 @@
 body{
     background-color: #F1F9FF !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .main-container{
     font-family: 'Lora';
     font-size: 22px;
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+    padding-top: 5% !important;
+    padding-bottom: 5%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Ensure the columns are spaced on the left and right */
+    width: 100%; /* Ensure the row spans the full width */
 }
 
 .company-name{
     font-size: 64px;
+    font-weight: bold;
+    padding-bottom: 50px !important;
 }
 
 .contact-info{
-    text-align: center;
-    padding-right: 100px;
-    
+    text-align: center;    
+    /* width: 35% !important; */
+}
+
+.map{
+    padding-left: 100px !important;
 }
 
 .labels-info{
@@ -28,4 +46,18 @@ body{
 .label-value{
     background-color: white;
     border-radius: 15px;
+}
+
+.row.label-value {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the row within its parent container */
+}
+
+.row.label-value .col {
+    width: auto; /* Allow columns to shrink based on content */
+}
+
+.row.label-value .col-4 {
+    padding-right: 10px; /* Optional: add some space between the columns */
+    padding-left: 10px;
 }
