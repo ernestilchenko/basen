@@ -1,0 +1,31 @@
+body{
+    background-color: #F1F9FF !important;
+}
+
+.main-container{
+    font-family: 'Lora';
+    font-size: 22px;
+}
+
+.company-name{
+    font-size: 64px;
+}
+
+.contact-info{
+    text-align: center;
+    padding-right: 100px;
+    
+}
+
+.labels-info{
+    text-align: left;
+}
+
+.value-info{
+    text-align: right;
+}
+
+.label-value{
+    background-color: white;
+    border-radius: 15px;
+}
