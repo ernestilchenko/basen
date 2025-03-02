@@ -1,7 +1,17 @@
 body{
-    background-color: #F1F9FF !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    background-color: rgba(124, 164, 255, 0.2);
+    margin: 0 ;
+    padding: 0 ;
+    a{
+        text-decoration: none;
+    }
+}
+
+.lora{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .main-container{
@@ -9,8 +19,8 @@ body{
     font-size: 22px;
     justify-content: center;
     align-items: center;
-    display: flex !important;
-    padding-top: 5% !important;
+    display: flex ;
+    padding-top: 5% ;
     padding-bottom: 5%;
 }
 
@@ -23,7 +33,7 @@ body{
 .company-name{
     font-size: 64px;
     font-weight: bold;
-    padding-bottom: 50px !important;
+    padding-bottom: 50px ;
 }
 
 .contact-info{
@@ -32,7 +42,7 @@ body{
 }
 
 .map{
-    padding-left: 100px !important;
+    padding-left: 100px ;
 }
 
 .labels-info{
