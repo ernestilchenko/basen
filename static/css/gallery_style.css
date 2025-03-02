@@ -1,60 +1,61 @@
-.entry-screen {
-    width: 100%;
-    height: 100%;
-    background: url("/static/css/image0_0.jpg") no-repeat center center/cover;
+div.first-screen{
+    height: calc(100vh - 50px);
+    width: auto;
+    background-image: url('images/pool.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-template-rows: 95%; 
 }
 
-.entry-screen .container .upper{
-    position: absolute;
-    top: 30%;
-    left: 70%;
-    transform: translateX(-70%);
-    text-align: center;
-    white-space: nowrap;
-}
-
-.entry-screen .container .upper p{
-    font-family: 'Lora';
-    color: white;
-}
-
-.entry-screen .container .upper .text-header{
-    font-size: 64px;
-    font-weight: 800;
-}
-
-.entry-screen .container .upper .text-text{
-    font-size: 48px;
-    font-weight: 600;
+div.first-screen-title{
+    margin-left: auto;
     text-align: right;
+    font-size: 5vw;
+    word-wrap: break-word;
+    color: rgb(255, 255, 255);
+    div.capture{
+        padding-top: 70px;
+        display: block;
+        height: auto;
+        line-height: normal;
+        div.title{
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        div.subtitle{
+            position: relative;
+            top: -20px;
+            font-weight: 400;
+            z-index: 1; 
+        }
+    }    
 }
 
-
-.entry-screen .container .lower{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.entry-screen .container .lower p{
-    font-family: 'Lora';
-    font-weight: 700;
-    font-size: 36px;
+div.see-more{
     color: white;
+    font-weight: 600;
+    margin: -50px auto 0 auto;
+    div.arrow{
+        animation: slideUpDown .7s ease-in-out infinite alternate;
+    }
 }
 
-.entry-screen .container .lower img{
-    width: 40px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .main-gallery {
     margin-bottom: 30px;
-    background: url("/static/images/gallery-background.png") no-repeat center center;
+    background: url("images/third-screen.jpg") no-repeat center center;
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center center; /* Ensures the image is centered */
 }
