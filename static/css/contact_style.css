@@ -59,15 +59,29 @@ body{
 }
 
 .row.label-value {
-    width: 80%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the row within its parent container */
+    width: 80%;
+    margin: 0 auto;
 }
 
 .row.label-value .col {
-    width: auto; /* Allow columns to shrink based on content */
+    width: auto;
 }
 
 .row.label-value .col-4 {
-    padding-right: 10px; /* Optional: add some space between the columns */
+    padding-right: 10px;
     padding-left: 10px;
+}
+
+.map iframe{
+    border-radius: 15px;
+}
+
+@media (max-width: 992px){
+    .main-container{
+        font-size: 14px;
+    }
+
+    .company-name{
+        font-size: 32px;
+    }
 }

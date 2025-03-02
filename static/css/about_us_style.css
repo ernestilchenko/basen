@@ -1,0 +1,26 @@
+/* TODO: finish second screen circles width and height */
+
+.capture{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+}
+
+@media (max-width: 768px){
+    .circles {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .circles img{
+        width: 60px;
+        height: auto;
+    }
+
+    .circle-item{
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 50px;
+    }
+}
