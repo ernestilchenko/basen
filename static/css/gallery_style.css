@@ -1,3 +1,58 @@
+.entry-screen {
+    width: 100%;
+    height: 100%;
+    background: url("/static/css/image0_0.jpg") no-repeat center center/cover;
+    margin-bottom: 50px;
+}
+
+.entry-screen .container .upper{
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translateX(-70%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.entry-screen .container .upper p{
+    font-family: 'Lora';
+    color: white;
+}
+
+.entry-screen .container .upper .text-header{
+    font-size: 64px;
+    font-weight: 800;
+}
+
+.entry-screen .container .upper .text-text{
+    font-size: 48px;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+.entry-screen .container .lower{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.entry-screen .container .lower p{
+    font-family: 'Lora';
+    font-weight: 700;
+    font-size: 36px;
+    color: white;
+}
+
+.entry-screen .container .lower img{
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .main-gallery{
     margin-bottom: 30px;
 }
