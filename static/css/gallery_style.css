@@ -1,3 +1,7 @@
+.main-gallery{
+    margin-bottom: 30px;
+}
+
 .main-gallery .container .row{
     margin-bottom: 20px;
 }
@@ -11,4 +15,31 @@
 
 .main-gallery .container .row img:hover{
     transform: scale(1.03);
+}
+
+.second-gallery .container .row{
+    margin-bottom: 20px;
+}
+
+.second-gallery .container .row img{
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+}
+
+.second-gallery .container .row img:hover{
+    transform: scale(1.03);
+}
+
+.second-gallery .container .row .text-header{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Lora';
+}
+
+.second-gallery .container .row .text-text{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Lora';
 }
