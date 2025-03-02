@@ -1,0 +1,102 @@
+.entry-screen {
+    width: 100%;
+    height: 100%;
+    background: url("/static/css/image0_0.jpg") no-repeat center center/cover;
+}
+
+.entry-screen .container .upper{
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translateX(-70%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.entry-screen .container .upper p{
+    font-family: 'Lora';
+    color: white;
+}
+
+.entry-screen .container .upper .text-header{
+    font-size: 64px;
+    font-weight: 800;
+}
+
+.entry-screen .container .upper .text-text{
+    font-size: 48px;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+.entry-screen .container .lower{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.entry-screen .container .lower p{
+    font-family: 'Lora';
+    font-weight: 700;
+    font-size: 36px;
+    color: white;
+}
+
+.entry-screen .container .lower img{
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-gallery {
+    margin-bottom: 30px;
+    background: url("/static/images/gallery-background.png") no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Ensures the image is centered */
+}
+
+.main-gallery .container .row{
+    margin-bottom: 20px;
+}
+
+.main-gallery .container .row img{
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+}
+
+.main-gallery .container .row img:hover{
+    transform: scale(1.03);
+}
+
+.second-gallery .container .row{
+    margin-bottom: 20px;
+}
+
+.second-gallery .container .row img{
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+}
+
+.second-gallery .container .row img:hover{
+    transform: scale(1.03);
+}
+
+.second-gallery .container .row .text-header{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Lora';
+}
+
+.second-gallery .container .row .text-text{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Lora';
+}
