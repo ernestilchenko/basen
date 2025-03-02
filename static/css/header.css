@@ -1,0 +1,63 @@
+
+header.header{
+    height: 50px;
+    transition: 0.3s ease;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);   
+}
+div.container.col-10.d-flex{
+    a{
+        img{
+            height: 50px;
+            width: auto;
+            align-self: center;
+        }
+        text.logo.lora{
+            font-size: 26px;
+            color: #50585A;
+        }
+    } 
+    
+} 
+ul.nav{
+    li.nav-item{
+        a.nav-link.lora{
+            width: fit-content;
+            font-size: 12px;
+            color: #8f9da1;
+            font-weight: 600;
+            transition: 0.6s;
+        }
+        a.nav-link.lora:hover{
+            color: #50585A;
+            transition: 0.6s ;
+
+        }
+    }
+} 
+
+
+header.header.dark{
+    background: rgba(0, 0, 0, 0.9);
+    div.container.col-10.d-flex{
+        a{
+            text.logo.lora{
+                color: #c2d9df;
+            }
+        } 
+        
+    } 
+    ul.nav{
+        li.nav-item{
+            a.nav-link.lora{
+                color: #8f9da1;
+                transition: 0.6s;
+            }
+            a.nav-link.lora:hover{
+                color: #c2d9df;
+                transition: 0.6s ;
+    
+            }
+        }
+    } 
+}

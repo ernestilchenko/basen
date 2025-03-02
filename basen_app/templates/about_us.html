@@ -25,106 +25,25 @@
     <link rel="stylesheet" type="text/css" href="{% static 'scss/style.scss' %}">
     <title>Beyond The Pool</title>
     <title>Ultimate</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">
-    <style>
-
-div.fourth-screen{
-            height: 100vh;
-          
-            div.carousel.slide{
-                height: calc(100vh - 5px);
-                
-                div.carousel-inner{
-                    width: 100%;
-                    
-                    div.carousel-item{
-                        div.carousel-item-inner{
-                            div.big-title{
-                                position: absolute;
-                                div.first-screen-title{
-                                    margin-left: auto;
-                                    text-align: right;
-                                    font-size: 5vw;
-                                    word-wrap: break-word;
-                                    color: white;
-                                    div.capture{
-                                        padding-top: 70px;
-                                        display: block;
-                                        height: auto;
-                                        line-height:12vh;
-                                        /* border: 5px solid transparent;  
-                                        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
-                                        background: rgba(66, 79, 101, 0.3); */
-                                        div.title{
-                                            font-weight: 700;
-                                            z-index: 1;
-                                        }
-                                        div.subtitle{
-                                            position: relative;
-                                            top: -20px;
-                                            font-weight: 400;
-                                            z-index: 1; 
-                                        }
-                                    }    
-                                }
-                            }
-                            img{
-                               
-                                height: calc(100vh - 5px);
-                                width: 100%;
-                                object-fit: cover; /* Ensure the image covers the space */
-                                object-position: center;
-                            }
-                        }
-                        
-                      
-                    }
-                    
-
-                }
-            }
-
-        }
-        
-    </style>
+    <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    
 </head>
-<body class="start">
-    <!-- <div class="header">
-        <header class="header row col-12 align-items-center">
-            <a href="{% url 'home' %}" class="col-5 align-items-center">
-                <div class="centre">
-                    <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                    <text class="logo lora">Beyond The Pool</text>
-                </div>
-            </a>
-            <nav class="nav-menu col-7 align-items-center">
-                <a href="{% url 'basen' %}" class="nav-link lora">RODZAJE BASENÓW</a>
-                <a href="#" class="nav-link lora">GALERIA</a>
-                <a href="#" class="nav-link lora">SERWIS</a>
-                <a href="#" class="nav-link lora">O FIRMIE</a>
-                <a href="#" class="nav-link lora">KONTAKT</a>
-                <a href="#" class="nav-link lora">USTAWIENIA</a>
-            </nav>
-        </header>
-    </div> -->
-
-
-
+<body>
     <header class="header sticky-top flex-wrap justify-content-center">
         <div class="container col-10 d-flex">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <a href="{% url 'home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
                 <text class="logo lora">Beyond The Pool</text>
             </a>
     
             <ul class="nav d-flex align-items-center">
-                <li class="nav-item"><a href="basen/" class="nav-link lora">RODZAJE BASENÓW</a></li>
+                <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link lora">RODZAJE BASENÓW</a></li>
                 <li class="nav-item"><a href="#" class="nav-link lora">GALERIA</a></li>
                 <li class="nav-item"><a href="#" class="nav-link lora">PRZYKŁAD</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">O FIRMIE</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link lora">KONTAKT</a></li>
+                <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link lora">O FIRMIE</a></li>
+                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link lora">KONTAKT</a></li>
                 
                 <!-- Dropdown for USTAWIENIA -->
                 <li class="nav-item dropdown">
@@ -132,7 +51,7 @@ div.fourth-screen{
                         USTAWIENIA
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="ustawieniaDropdown">
-                        <li><button class="btn color btp-primary">DARK</button></li>
+                        <li><button class="btn color btp-primary change-color">DARK</button></li>
                         <li><a class="dropdown-item" href="#"><select name="lang" id="">
                             <option value="english">english</option>
                             <option value="polish">polish</option>
@@ -158,7 +77,6 @@ div.fourth-screen{
                     </div>
                 </div>
             </div>
-            
             <div class="see-more">
                 <div class="capture">
                     ZOBACZ WIĘCEJ
@@ -169,33 +87,12 @@ div.fourth-screen{
             </div>
 
         </div>
-
         <div class="fourth-screen pt-1 ">
-            <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+            <div id="carouselExampleIndicators" class=" carousel slide fourth" data-ride="carousel">
                 <div class="carousel-inner w-100">
                     <div class="carousel-item item_1 active">
                         <div class="carousel-item-inner d-flex align-items-center">
-                            <div class="big-title container col-10 d-flex align-self-center align-items-center m-auto">
-                                <div class="fourth-screen-title col-10">
-                                    <div class="capture">
-                                        <div class="title">
-                                            Beyond the pool
-                                        </div>
-                                        <div class="subtitle">
-                                            Baseny, które przekraczają oczekiwania
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
-                    
-                            <!-- Pop-up -->
-                            <div class="popup">
+                            <div class="popup show">
                                 <div class="popup-content">
                                     <h3 lora>Beyond The Pool</h3>
                                     <p>
@@ -203,58 +100,50 @@ div.fourth-screen{
                                     </p>
                                 </div>
                             </div>
+                            <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">            
                         </div>
                     </div>
-                  </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              
+            </div>
         </div>
 
         <div class="second-screen">
             <div class="second-screen-inner">
-                <div class="content">
-                    <div  class="circles container col-10">
+                <div class="second-screen-content">
+                    <div  class="second-screen-content-circles container col-10">
                         <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
+                            <div class="second-screen-content-circles-circle">
                                 <img src="{%static 'images/mdi_like.svg'%}" alt="">
                             </div>
-                            <div class="circle-capture">
+                            <div class="second-screen-content-circles-circle-capture">
                                 GARANTUJEMY JAKOŚĆ
                             </div>
                         </div>
                         <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
+                            <div class="second-screen-content-circles-circle">
                                 <img src="{%static 'images/game-icons_podium-winner.svg'%}" alt="">
                             </div>
-                            <div class="circle-capture">
+                            <div class="second-screen-content-circles-circle-capture">
                                 JESTEŚMY NAJLEPSI W SWOIM REGIONIE
                             </div>
                         </div>
                         <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
+                            <div class="second-screen-content-circles-circle">
                                 <div class="nums" id="to_100">
                                     0
                                 </div>
                             </div>
-                            <div class="circle-capture">
+                            <div class="second-screen-content-circles-circle-capture">
                                 ZREALIZOWANYCH ZLECEŃ
                             </div>
                         </div>
                         <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
+                            <div class="second-screen-content-circles-circle">
                                 <div class="nums" id="to_5">
                                     0
                                 </div>                            
                             </div>
-                            <div class="circle-capture">
+                            <div class="second-screen-content-circles-circle-capture">
                                 LAT W TEJ SPRAWIE 
                             </div>
                         </div>
@@ -263,8 +152,6 @@ div.fourth-screen{
                 </div>
             </div>
         </div>
-        
-
     </main>
     <footer class="footer lora">
         <div class="footer-inner container d-flex h-100">
@@ -288,7 +175,6 @@ div.fourth-screen{
                     </div>
 
                 </div>
-
             </div>
             <div class="send-form container pt-4 col-5 h-100">
                 <div class="form container">
@@ -305,11 +191,6 @@ div.fourth-screen{
                         <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
                     </div>
                 </div>
-                
-               
-
-                
-    
             </div>
             <div class="socials d-block lora pt-4 col-3 h-100">
                 <div class="socials-title visible  w-100">Bądż na bieżąco</div>
@@ -364,6 +245,19 @@ div.fourth-screen{
     <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script>
     <script>
         
+
+        let bodyChange = document.querySelector('body'),
+        headerChange = document.querySelector('header'),
+        footerChange = document.querySelector('footer'),
+        butChange = document.querySelector('.change-color');
+        butChange.addEventListener('click', eve =>{
+            if(eve){
+                bodyChange.classList.toggle('dark');
+                headerChange.classList.toggle('dark');
+                footerChange.classList.toggle('dark');
+            }
+        }); 
+
 
 
         function countToHundred() {
@@ -447,29 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//   POP-UP
 
-
-
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Select elements
-    const fourthScreenTitle = document.querySelector('.fourth-screen-title');
-    const popup = document.querySelector('.popup');
-
-    // Timer to trigger the popup
-    setTimeout(() => {
-        // Hide the first-screen-title
-        if (fourthScreenTitle) {
-            fourthScreenTitle.style.display = 'none';
-        }
-
-        // Show the popup with animation
-        if (popup) {
-            popup.classList.add('show');
-        }
-    }, 3000); // 5000ms = 5 seconds
-});
 
 
 
