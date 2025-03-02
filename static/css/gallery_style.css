@@ -1,0 +1,14 @@
+.main-gallery .container .row{
+    margin-bottom: 20px;
+}
+
+.main-gallery .container .row img{
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+}
+
+.main-gallery .container .row img:hover{
+    transform: scale(1.03);
+}
