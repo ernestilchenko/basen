@@ -1,9 +1,15 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ContactForm()
+    return render(request, 'home.html', {'form': form})
 
 def basen(request):
     return render(request, 'basen.html')
