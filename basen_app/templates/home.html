@@ -23,8 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'scss/style.scss' %}">
-    <title>Diamant - Minipools</title>
-    <title>Ultimate</title>
+    <title>Beyond The Pool</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -308,25 +307,23 @@
 
             </div>
             <div class="send-form container pt-4 col-5 h-100">
-                <div class="form container">
-                    <div class="form-title container visible">
-                        NAPISZ DO NAS
+                <form method="POST" action="{% url 'home' %}">
+                    {% csrf_token %}
+                    <div class="form container">
+                        <div class="form-title container visible">
+                            NAPISZ DO NAS
+                        </div>
+                        <div class="inputs">
+                            <input type="email" name="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
+                            <textarea type="message" name="message" id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
+                            <p id="enhancedCharCount">Pozostało 200 symbołów</p>
+                        
+                        </div>
+                        <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
+                            <button type="submit" class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
+                        </div>
                     </div>
-                    <div class="inputs">
-                        <input type="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
-                        <textarea id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
-                        <p id="enhancedCharCount">Pozostało 200 symbołów</p>
-                    
-                    </div>
-                    <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
-                        <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
-                    </div>
-                </div>
-                
-               
-
-                
-    
+                </form>
             </div>
             <div class="socials d-block lora pt-4 col-3 h-100">
                 <div class="socials-title visible  w-100">Bądż na bieżąco</div>

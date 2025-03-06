@@ -1,0 +1,274 @@
+{% load static %}
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galeria</title>
+
+        <link rel="stylesheet" href="{% static 'css/example_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+        <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+       
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header sticky-top flex-wrap justify-content-center">
+            <div class="container col-10 d-flex">
+                <a href="{% url 'home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
+                    <text class="logo lora">Beyond The Pool</text>
+                </a>
+        
+                <ul class="nav d-flex align-items-center">
+                    <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link lora">RODZAJE BASENÓW</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link lora">GALERIA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link lora">PRZYKŁAD</a></li>
+                    <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link lora">O FIRMIE</a></li>
+                    <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link lora">KONTAKT</a></li>
+                    
+                    <!-- Dropdown for USTAWIENIA -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link lora dropdown-toggle" href="#" id="ustawieniaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            USTAWIENIA
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ustawieniaDropdown">
+                            <li><button class="btn change-color color btp-primary">DARK</button></li>
+                            <li><a class="dropdown-item" href="#"><select name="lang" id="">
+                                <option value="english">english</option>
+                                <option value="polish">polish</option>
+                            </select></a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="container-main">
+            <div class="container-landing-page">
+                <div class="first-screen d-grid">
+                    <div class="big-title container col-10 d-flex align-items-center">
+                        <div class="first-screen-title dark col-10 ">
+                            <div class="capture">
+                                <div class="title">
+                                    Basen ze stali nierdzewnej
+                                </div>
+                                <!-- <div class="subtitle">
+                                    Zobać nasze pracy                         
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="see-more">
+                        <div class="capture">
+                            ZOBACZ WIĘCEJ
+                        </div>
+                        <div class="arrow d-block ">
+                            <img src="{% static 'images/weui_arrow-filled.svg'%}" alt="" class="moving-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-3dmodel">
+                <p class="title-3dmodel">Poznaj nasz basen</p>
+                <model-viewer 
+                    src="{% static 'models/ImageToStl.com_rolling_2b.gltf' %}" 
+                    alt="A 3D model" 
+                    auto-rotate 
+                    camera-controls 
+                    background-color="#EFEFEF" 
+                    style="width: 100%; height: 500px;">
+                </model-viewer>
+                <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            </div>
+            <div class="container-description">
+                <div class="grid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row align-items-center justify-content-center">
+                                <dic class="col-3">
+                                    <img src="{% static 'css/images/steel.jpg' %}">
+                                </dic>
+                                <dic class="col-6">
+                                    <p class="description-header">Moc</p>
+                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                </dic>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row align-items-center justify-content-center">
+                                <dic class="col-3">
+                                    <img src="{% static 'css/images/steel.jpg' %}">
+                                </dic>
+                                <dic class="col-6">
+                                    <p class="description-header">Potęga</p>
+                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                </dic>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row align-items-center justify-content-center">
+                                <dic class="col-3">
+                                    <img src="{% static 'css/images/steel.jpg' %}">
+                                </dic>
+                                <dic class="col-6">
+                                    <p class="description-header">Kolor</p>
+                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                </dic>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-proccess">
+                <div class="third-screen d-flex align-items-center">
+                    <div class="third-screen-inner col-12 d-block align-items-center">
+                        <div class="third-screen-inner-title  align-items-center lora ">PRZEŻYJ TEN PROCES Z NAMI</div>
+                        <div class="third-screen-inner-content">
+                            <div class="third-screen-inner-line  col-12 ">
+                                <div class="container-sm col-10">
+                                    <div class="row">
+                                        <div class="col-md-8 mx-auto">
+                                            <div id="myCarousel" class="carousel slide third" data-ride="carousel">
+                                
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                                                </ol>   
+                                                
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="{%static 'images/proces1.png'%}" alt="">
+                                                        <div class="image-capture lora"><div class="title-capt">Cięcie i przygotowanie materiału</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="{%static 'images/proces2.png'%}"  alt="">
+                                                        <div class="image-capture lora"><div class="title-capt">Gięcie i formowanie elementów</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="{%static 'images/proces3.png'%}" alt="">
+                                                        <div class="image-capture lora"><div class="title-capt">Spawanie i łączenie elementów</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
+                                                    </div>	
+                                                    <div class="carousel-item">
+                                                        <img src="{%static 'images/proces4.png'%}" alt="">
+                                                        <div class="image-capture lora"><div class="title-capt">Obróbka wykończeniowa</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="{%static 'images/proces5.png'%}" class="img" alt="">
+                                                        <div class="image-capture lora"><div class="title-capt">Montaż akcesoriów i finalne testy</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
+                                                    </div>					
+                                                </div>
+                                               
+                                                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                                    <span><i class="fa fa-angle-left"></i></span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                                                    <span><i class="fa fa-angle-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer lora">
+            <div class="footer-inner container d-flex h-100">
+                <div class="personal-info col-4 h-100 pt-4 d-block">
+                    <div class="location">
+                        <div class="visible">
+                            ŁÓDŹ
+                        </div>
+                        <div class="half-visible">
+                            al. Politechniki 7
+                            <p>93-590 ŁÓDŹ
+                        </div>
+                    </div>
+                    <div class="name-surname">
+                        <div class="visible">
+                            Danylo Moskovchuk
+                        </div>
+                        <div class="half-visible">
+                            +48 739 064 354
+                            <p>danylomoskovchuk@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <div class="send-form container pt-4 col-5 h-100">
+                    <div class="form container">
+                        <div class="form-title container visible">
+                            NAPISZ DO NAS
+                        </div>
+                        <div class="inputs">
+                            <input type="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
+                            <textarea id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
+                            <p id="enhancedCharCount">Pozostało 200 symbołów</p>
+                        </div>
+                        <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
+                            <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="socials d-block lora pt-4 col-3 h-100">
+                    <div class="socials-title visible  w-100">Bądż na bieżąco</div>
+                    <div class="social my-1  d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img  src="{%static 'images/linkedin.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="social my-1 d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/instagram.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="social my-1 d-flex align-items-center  container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/facebook.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="social my-2 d-flex align-items-center container">
+                        <div class="col-1"></div>
+                        <div class="icon col-2">
+                            <img src="{%static 'images/youtube.svg'%}" alt="">
+                        </div>
+                        <div class="capture col-6">
+                            <a class="half-visible" href="">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
