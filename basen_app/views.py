@@ -5,7 +5,6 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-
 def basen(request):
     return render(request, 'basen.html')
 
@@ -18,3 +17,6 @@ def aboutUs(request):
 
 def gallery(request):
     return render(request, 'gallery.html')
+
+def example(request):
+    return render(request, "example.html")
