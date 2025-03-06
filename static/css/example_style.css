@@ -52,3 +52,10 @@ div.see-more{
         transform: translateY(-10px);
     }
 }
+
+.container-3dmodel .title-3dmodel{
+    font-family: 'Lora';
+    font-weight: 800;
+    font-size: 54px;
+    text-align: center;
+}

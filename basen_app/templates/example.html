@@ -73,6 +73,18 @@
                     </div>
                 </div>
             </div>
+            <div class="container-3dmodel">
+                <p class="title-3dmodel">Poznaj nasz basen</p>
+                <model-viewer 
+                    src="{% static 'models/ImageToStl.com_rolling_2b.gltf' %}" 
+                    alt="A 3D model" 
+                    auto-rotate 
+                    camera-controls 
+                    background-color="#EFEFEF" 
+                    style="width: 100%; height: 500px;">
+                </model-viewer>
+                <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            </div>
         </div>
         <footer class="footer lora">
             <div class="footer-inner container d-flex h-100">
