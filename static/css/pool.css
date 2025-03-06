@@ -18,8 +18,23 @@ html {
   font-style: normal;
 }
 
+:root.dark{
+    background: rgba(0, 0, 0, 0.9)!important;
+    div.second-screen-content-circles-circle{
+        background: #000;
+    }
+    div.second-screen-content-circles-circle-capture{
+        color: #ffffff;
+    }
+}
+
+:root {
+    --bg-color:  rgba(124, 164, 255, 0.2);
+    --text-color: black;
+}
+
 body{
-    background: rgba(124, 164, 255, 0.2);
+    background:var(--bg-color);
 }
 
 /* FIRST SCREEN */
@@ -159,14 +174,15 @@ div.third-screen-inner{
 div.third-screen-inner-title{
     color: #fff;
     font-size: 3vw;                    
-    height: 30vh;
+    height: 10vh;
     text-align: center;
-    padding-top: 90px;
+    padding-top: 20px;
+    margin-top: 90px;
 }
 
 div.third-screen-inner-line{
         background: rgb(80, 88, 90, 0.7);
-        height: 420px;
+        height: 560px;
         .carousel.third {
             margin: 25px 0 50px;
             height: 300px;
@@ -223,7 +239,7 @@ div.third-screen-inner-line{
             text-align: center;
             img{
                 height: 320px;
-                width: auto;
+                width: 521px;
             }
         }
 
@@ -308,7 +324,7 @@ div.third-screen-inner-line{
             background: #303536;
             border-color: #303536;
         }
-}
+}       
 
 /* FOURTH SCREEN */
 

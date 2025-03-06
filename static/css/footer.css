@@ -56,23 +56,26 @@ footer.footer{
     }
 
 }
-
-
-footer.footer.dark{
-    div.footer-inner{
-        div.visible{
-            color: #c2d9df;
-            font-size: 2vw;
-        }
-        div.half-visible{
-            color: #8f9da1;
-            font-size: 1.2vw;
-        }
-        a.half-visible{
-            color: #8f9da1;
-            font-size: 1.5vw;
+:root.dark{
+    body{
+        footer.footer{
+            div.footer-inner{
+                div.visible{
+                    color: #c2d9df;
+                    font-size: 2vw;
+                }
+                div.half-visible{
+                    color: #8f9da1;
+                    font-size: 1.2vw;
+                }
+                a.half-visible{
+                    color: #8f9da1;
+                    font-size: 1.5vw;
+                }
+            }
+            
+        
         }
     }
-    
-
 }
+
