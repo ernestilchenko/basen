@@ -1,11 +1,35 @@
-body{
-    background-color: rgba(124, 164, 255, 0.2);
-    margin: 0 ;
-    padding: 0 ;
-    a{
-        text-decoration: none;
-    }
+html {
+    box-sizing: border-box;
+    height: auto;
+    background-image: none;
 }
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+:root.dark{
+    body{
+        background: rgba(0, 0, 0, 0.9);
+    div.second-screen-content-circles-circle{
+        background: #000;
+    }
+    div.second-screen-content-circles-circle-capture{
+        color: #ffffff;
+    }
+    } 
+}
+
+:root {
+    body{
+        background: rgba(124, 164, 255, 0.2);
+        margin: 0 ;
+        padding: 0 ;
+        a{
+            text-decoration: none;
+        }
+    }
+ }
 
 .lora{
     font-family: "Lora", serif;

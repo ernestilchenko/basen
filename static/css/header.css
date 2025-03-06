@@ -6,6 +6,7 @@ header.header{
     background: rgba(255, 255, 255, 0.9);   
 }
 div.container.col-10.d-flex{
+    padding: 0 15px;
     a{
         img{
             height: 50px;
@@ -36,28 +37,106 @@ ul.nav{
     }
 } 
 
+ul.dropdown-menu{
+    li{
+        margin-top: 5px;
+        padding: 0 10px;
+    }
+}
 
-header.header.dark{
-    background: rgba(0, 0, 0, 0.9);
-    div.container.col-10.d-flex{
-        a{
-            text.logo.lora{
-                color: #c2d9df;
+button.change-color{
+    border: 1px solid #50585A;
+    color: #50585A;
+    border-radius: 3px;
+    width: 135px;
+    transition: .3s;
+}
+
+button.button-lang{
+    border: 1px solid #50585A;
+    color: #50585A;
+    border-radius: 3px;
+    background: #fff;
+    width: 65px;
+    transition: .3s;
+}
+
+button.change-color:hover, button.button-lang:hover{
+    background: #8d9ca0;
+    color: white;
+    transition: .3s;
+}
+
+button.selected{
+    background: #52595b;
+    color: white;
+}
+
+:root.dark{
+    body{
+        header.header{
+            background: rgba(0, 0, 0, 0.9);
+            div.container.col-10.d-flex{
+                a{
+                    text.logo.lora{
+                        color: #c2d9df;
+                    }
+                } 
+                
+            } 
+            ul.nav{
+                li.nav-item{
+                    a.nav-link.lora{
+                        color: #8f9da1;
+                        transition: 0.6s;
+                    }
+                    a.nav-link.lora:hover{
+                        color: #c2d9df;
+                        transition: 0.6s ;
+            
+                    }
+                }
             }
-        } 
-        
-    } 
-    ul.nav{
-        li.nav-item{
-            a.nav-link.lora{
-                color: #8f9da1;
-                transition: 0.6s;
-            }
-            a.nav-link.lora:hover{
+            ul.dropdown-menu{
+                background: #000;
+                li button.btn{
+                    color: #c2d9df;
+                }
+                li select{
+                    background: #000;
+                    border: 1px solid #c2d9df;
+                    border-radius:3px;
+                    color: #c2d9df;
+                }
+            } 
+
+            button.change-color{
+                background: #000;
+                border: 1px solid #c2d9df;
                 color: #c2d9df;
-                transition: 0.6s ;
-    
+                width: 135px;
+                transition: .3s;
+            }
+
+            button.change-color:hover, button.button-lang:hover{
+                background: #8d9ca0;
+                color: white;
+                transition: .3s;
+            }
+            
+            button.button-lang{
+                background: #000;
+                border: 1px solid #c2d9df;
+                color: #c2d9df;
+                transition: .3s;
+            }
+            
+            button.selected{
+                background: #52595b;
+                color: white;
             }
         }
-    } 
+    }
 }
+
+

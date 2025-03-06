@@ -80,7 +80,7 @@ model-viewer {
     background: url('images/example-description.png') no-repeat center center;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: 150vh;
     width: auto;
     justify-content: center;
     display: flex;

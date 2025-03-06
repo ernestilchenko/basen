@@ -1,3 +1,45 @@
+:root.dark{
+    body{
+        background: rgba(0, 0, 0, 0.9);
+    div.second-screen-content-circles-circle{
+        background: #000;
+    }
+    div.second-screen-content-circles-circle-capture{
+        color: #ffffff;
+    }
+    }
+    
+}
+
+:root {
+    --bg-color:  rgba(124, 164, 255, 0.2);
+    --text-color: black;
+}
+
+body{
+    background:var(--bg-color);
+}
+
+html {
+    box-sizing: border-box;
+    height: auto;
+    background-image: none;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+ /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 400 to 700 */
+
+.lora{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 div.first-screen{
     height: calc(100vh - 50px);
     width: auto;
