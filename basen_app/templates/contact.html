@@ -130,13 +130,13 @@
         }
 
         .form-control {
+            background-color: rgba(255, 255, 255, 0.05);
             border: none;
             border-bottom: 1px solid var(--medium-gray);
+            color: white;
             border-radius: 0;
-            padding: 12px 5px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--pure-white);
-            transition: all 0.3s ease;
+            padding: 10px 5px;
+            margin-bottom: 10px;
         }
 
         .form-control::placeholder {
@@ -144,90 +144,17 @@
         }
 
         .form-control:focus {
-            box-shadow: none;
-            border-color: var(--pure-white);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .social img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-            transition: all 0.3s ease;
-        }
-
-        .social:hover img {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-
-        .social a {
-            color: var(--pure-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social a:hover {
-            color: var(--light-gray);
-        }
-
-        /* Social media section - RIGHT ALIGNED */
-        .socials-section {
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        .social {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .social-icon {
-            width: 40px;
-            margin-left: 15px;
-        }
-
-        .social-name {
-            font-size: 1.1rem;
-        }
-
-        /* Contact form section */
-        .contact-form {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-left: 2px solid var(--light-gray);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: none;
-            border-bottom: 1px solid var(--medium-gray);
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
             background-color: rgba(255, 255, 255, 0.1);
             box-shadow: none;
             border-bottom: 1px solid white;
         }
 
-        /* Send button */
         .send-button {
             background-color: var(--pure-white);
             color: var(--primary-black);
             font-weight: 600;
             border-radius: 0;
-            padding: 10px 40px;
+            padding: 8px 30px;
             transition: all 0.3s ease;
             border: none;
             text-transform: uppercase;
@@ -236,34 +163,59 @@
 
         .send-button:hover {
             background-color: var(--light-gray);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
 
-        /* Content sections */
         .location-section {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
 
-        @media (max-width: 768px) {
-            .socials-section {
-                text-align: center;
-                margin-top: 40px;
-                padding-right: 0;
-            }
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
 
-            .social {
+        .social-item span {
+            margin-right: 10px;
+            color: var(--light-gray);
+        }
+
+        .social-item a {
+            color: var(--light-gray);
+            text-decoration: none;
+        }
+
+        .social-item img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .social-item {
                 justify-content: center;
             }
+        }
 
-            .contact-form {
-                border-left: none;
-                border-top: 2px solid var(--light-gray);
-                margin-top: 30px;
-                padding-top: 30px;
-            }
+        .alert {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 0;
+            margin-top: 15px;
+        }
+
+        .alert-success {
+            border-left: 3px solid #28a745;
+        }
+
+        .alert-danger {
+            border-left: 3px solid #dc3545;
         }
     </style>
 </head>
@@ -284,11 +236,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{% url "basen" %}" class="nav-link">RODZAJE BASENÓW</a></li>
+                        <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link">RODZAJE BASENÓW</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">GALERIA</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">PRZYKŁAD</a></li>
-                        <li class="nav-item"><a href="{% url "about-us" %}" class="nav-link">O FIRMIE</a></li>
-                        <li class="nav-item"><a href="{% url "contact" %}" class="nav-link">KONTAKT</a></li>
+                        <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link">O FIRMIE</a></li>
+                        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">KONTAKT</a></li>
                     </ul>
                 </div>
             </nav>
@@ -351,57 +303,46 @@
 
             <!-- Contact Form -->
             <div class="col-md-4">
-                <div class="contact-form">
-                    <div class="visible mb-3">NAPISZ DO NAS</div>
-                    <input type="email" class="form-control mb-3" placeholder="Proszę wpisać email tutaj...">
-                    <textarea id="enhancedTextarea" class="form-control" rows="4" maxlength="200"
-                              placeholder="Proszę wpisać text tutaj..."></textarea>
-                    <p id="enhancedCharCount" class="half-visible mt-2">Pozostało 200 symbołów</p>
+                <div class="visible mb-3">NAPISZ DO NAS</div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Proszę wpisać email tutaj..." required>
+                    <textarea name="message" id="messageTextarea" class="form-control" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..." required></textarea>
+                    <p id="charCounter" class="half-visible mt-2">Pozostało 200 symbołów</p>
                     <div class="text-center mt-4">
-                        <button class="send-button">WYŚLIJ</button>
+                        <button type="submit" class="send-button">WYŚLIJ</button>
                     </div>
+                </form>
+                {% if messages %}
+                <div class="mt-3">
+                    {% for message in messages %}
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
                 </div>
+                {% endif %}
             </div>
 
-            <!-- Social Media - RIGHT ALIGNED -->
+            <!-- Social Media -->
             <div class="col-md-4">
-                <div class="socials-section">
-                    <div class="visible mb-4">Bądż na bieżąco</div>
-
-                    <div class="social">
-                        <div class="social-name">
-                            <a class="half-visible" href="">LinkedIn</a>
-                        </div>
-                        <div class="social-icon">
-                            <img src="{% static 'images/linkedin.svg' %}" alt="LinkedIn">
-                        </div>
+                <div class="visible mb-3">Bądż na bieżąco</div>
+                <div class="social-links">
+                    <div class="social-item">
+                        <a class="half-visible" href="#">LinkedIn</a>
+                        <img src="{% static 'images/linkedin.svg' %}" alt="LinkedIn">
                     </div>
-
-                    <div class="social">
-                        <div class="social-name">
-                            <a class="half-visible" href="">Instagram</a>
-                        </div>
-                        <div class="social-icon">
-                            <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
-                        </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">Instagram</a>
+                        <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
                     </div>
-
-                    <div class="social">
-                        <div class="social-name">
-                            <a class="half-visible" href="">Facebook</a>
-                        </div>
-                        <div class="social-icon">
-                            <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
-                        </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">Facebook</a>
+                        <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
                     </div>
-
-                    <div class="social">
-                        <div class="social-name">
-                            <a class="half-visible" href="">YouTube</a>
-                        </div>
-                        <div class="social-icon">
-                            <img src="{% static 'images/youtube.svg' %}" alt="YouTube">
-                        </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">YouTube</a>
+                        <img src="{% static 'images/youtube.svg' %}" alt="YouTube">
                     </div>
                 </div>
             </div>
@@ -417,8 +358,8 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Character counter for textarea
-        const textarea = document.getElementById('enhancedTextarea');
-        const charCount = document.getElementById('enhancedCharCount');
+        const textarea = document.getElementById('messageTextarea');
+        const charCount = document.getElementById('charCounter');
 
         textarea.addEventListener('input', function () {
             const remaining = 200 - this.value.length;
@@ -451,11 +392,11 @@
             .setLngLat([19.4538411, 51.7483849])
             .setPopup(new mapboxgl.Popup({offset: 25})
                 .setHTML(`
-                        <div style="color: #121212; font-family: 'Lora', serif;">
-                            <h6 style="margin-bottom: 5px; border-bottom: 1px solid #cccccc; padding-bottom: 5px;">Beyond The Pool</h6>
-                            <p style="margin: 0;">al. Politechniki 7<br>93-574 Łódż</p>
-                        </div>
-                    `))
+                    <div style="color: #121212; font-family: 'Lora', serif;">
+                        <h6 style="margin-bottom: 5px; border-bottom: 1px solid #cccccc; padding-bottom: 5px;">Beyond The Pool</h6>
+                        <p style="margin: 0;">al. Politechniki 7<br>93-574 Łódż</p>
+                    </div>
+                `))
             .addTo(map);
     });
 </script>
