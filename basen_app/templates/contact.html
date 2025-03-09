@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Beyond The Pool - Kontakt{% endblock %}
+{% block title %}{% trans "Beyond The Pool - Contact" %}{% endblock %}
 
 {% block extra_css %}
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'>
@@ -13,17 +14,18 @@
             <!-- Contact Information -->
             <div class="col-12 col-lg-6">
                 <div class="contact-info h-100">
-                    <h1 class="company-name">Beyond The Pool</h1>
-                    <p class="mb-4">Łódż<br>al.Politechiki 7<br>93-574 Łódż</p>
+                    <h1 class="company-name">{% trans "Beyond The Pool" %}</h1>
+                    <p class="mb-4">{% trans "Łódż" %}<br>{% trans "al.Politechiki 7" %}<br>{% trans "93-574 Łódż" %}
+                    </p>
 
                     <div class="row">
                         <div class="col-5 labels-info">
-                            <p>Przedstawiciel</p>
-                            <p>Telefon</p>
-                            <p>E-mail</p>
+                            <p>{% trans "Representative" %}</p>
+                            <p>{% trans "Phone" %}</p>
+                            <p>{% trans "E-mail" %}</p>
                         </div>
                         <div class="col-7 value-info">
-                            <p>Roman Beznosenko</p>
+                            <p>{% trans "Roman Beznosenko" %}</p>
                             <p>+48 570 099 806</p>
                             <p>romsdsg@gmail.com</p>
                         </div>
@@ -111,8 +113,8 @@
                 .setPopup(new mapboxgl.Popup({offset: 25})
                     .setHTML(`
                     <div style="color: #121212; font-family: 'Lora', serif;">
-                        <h6 style="margin-bottom: 5px; border-bottom: 1px solid #cccccc; padding-bottom: 5px;">Beyond The Pool</h6>
-                        <p style="margin: 0;">al. Politechniki 7<br>93-574 Łódż</p>
+                        <h6 style="margin-bottom: 5px; border-bottom: 1px solid #cccccc; padding-bottom: 5px;">{% trans "Beyond The Pool" %}</h6>
+                        <p style="margin: 0;">{% trans "al. Politechniki 7" %}<br>{% trans "93-574 Łódż" %}</p>
                     </div>
                 `))
                 .addTo(map);

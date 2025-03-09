@@ -1,0 +1,102 @@
+# French translations for the contact page
+msgid ""
+msgstr ""
+"Project-Id-Version: Beyond The Pool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-09 12:00+0000\n"
+"PO-Revision-Date: 2025-03-09 12:00+0000\n"
+"Last-Translator: Danylo Moskovchuk\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# Contact view messages
+msgid "New message from {email}"
+msgstr "Nouveau message de {email}"
+
+msgid "Message has been sent!"
+msgstr "Le message a été envoyé !"
+
+msgid "An error occurred while sending the message."
+msgstr "Une erreur s'est produite lors de l'envoi du message."
+
+# Contact page
+msgid "Beyond The Pool - Contact"
+msgstr "Beyond The Pool - Contact"
+
+msgid "Beyond The Pool"
+msgstr "Beyond The Pool"
+
+msgid "Łódż"
+msgstr "Łódż"
+
+msgid "al.Politechiki 7"
+msgstr "al.Politechiki 7"
+
+msgid "93-574 Łódż"
+msgstr "93-574 Łódż"
+
+msgid "Representative"
+msgstr "Représentant"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Roman Beznosenko"
+msgstr "Roman Beznosenko"
+
+# Footer translations
+msgid "ŁÓDŹ"
+msgstr "ŁÓDŹ"
+
+msgid "al. Politechniki 7"
+msgstr "al. Politechniki 7"
+
+msgid "93-590 ŁÓDŹ"
+msgstr "93-590 ŁÓDŹ"
+
+msgid "Danylo Moskovchuk"
+msgstr "Danylo Moskovchuk"
+
+msgid "WRITE TO US"
+msgstr "ÉCRIVEZ-NOUS"
+
+msgid "Please enter your email here..."
+msgstr "Veuillez saisir votre e-mail ici..."
+
+msgid "Please enter your message here..."
+msgstr "Veuillez saisir votre message ici..."
+
+msgid "200 characters remaining"
+msgstr "200 caractères restants"
+
+msgid "characters remaining"
+msgstr "caractères restants"
+
+msgid "SEND"
+msgstr "ENVOYER"
+
+msgid "Stay up to date"
+msgstr "Restez à jour"
+
+# Header navigation
+msgid "POOL TYPES"
+msgstr "TYPES DE PISCINES"
+
+msgid "GALLERY"
+msgstr "GALERIE"
+
+msgid "EXAMPLE"
+msgstr "EXEMPLE"
+
+msgid "ABOUT US"
+msgstr "À PROPOS DE NOUS"
+
+msgid "CONTACT"
+msgstr "CONTACT"

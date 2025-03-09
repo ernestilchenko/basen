@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
+from django.utils.translation import gettext as _
 
 
 # Create your views here.
@@ -39,18 +40,23 @@ def contact(request):
         message = request.POST.get('message')
 
         if email and message:
-            # Wysyłanie emaila
+            # Email sending
             try:
+                # Translatable subject line
+                subject = _('New message from {email}').format(email=email)
+
                 send_mail(
-                    subject=f'Nowa wiadomość od {email}',
+                    subject=subject,
                     message=message,
                     from_email='messengerproject64@gmail.com',
-                    recipient_list=['7777erik777@gmail.com'],  # Zmień na adres docelowy
+                    recipient_list=['7777erik777@gmail.com'],  # Change to target address
                     fail_silently=False,
                 )
-                messages.success(request, 'Wiadomość została wysłana!')
+                # Translatable success message
+                messages.success(request, _('Message has been sent!'))
             except Exception as e:
-                messages.error(request, 'Wystąpił błąd podczas wysyłania wiadomości.')
+                # Translatable error message
+                messages.error(request, _('An error occurred while sending the message.'))
 
             return redirect('contact')
 
