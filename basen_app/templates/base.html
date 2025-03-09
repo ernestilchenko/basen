@@ -1,0 +1,353 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Beyond The Pool{% endblock %}</title>
+
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'>
+    {% block extra_css %}{% endblock %}
+
+    <style>
+        :root {
+            --primary-black: #121212;
+            --secondary-black: #222222;
+            --medium-gray: #777777;
+            --light-gray: #e0e0e0;
+            --off-white: #f8f8f8;
+            --pure-white: #ffffff;
+            --accent-color: #d4d4d4;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--pure-white);
+            color: var(--primary-black);
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .header {
+            background-color: var(--pure-white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            border-bottom: 3px solid var(--primary-black);
+            z-index: 100;
+        }
+
+        .header .logo {
+            height: 50px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .header a {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        .header .lora {
+            line-height: 1;
+            font-size: 26px;
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--primary-black);
+            margin: 0 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: var(--primary-black);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-black);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .footer {
+            background-color: var(--primary-black);
+            color: var(--pure-white);
+            padding: 60px 0;
+        }
+
+        .visible {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--pure-white);
+            letter-spacing: 1px;
+        }
+
+        .half-visible {
+            opacity: 0.85;
+            color: var(--light-gray);
+        }
+
+        /* Form inputs in footer - modified for better text visibility */
+        .footer .form-control {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-bottom: 1px solid var(--medium-gray);
+            color: white !important; /* Ensure text is always white */
+            border-radius: 0;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+        }
+
+        .footer .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+            border-bottom: 1px solid white;
+            color: white !important; /* Ensure text remains white when focused */
+        }
+
+        /* Style input text in the textarea and email field */
+        .footer textarea,
+        .footer input[type="email"] {
+            color: white !important; /* Ensure text is always white */
+            caret-color: white; /* Make cursor visible */
+        }
+
+        /* Additional styles to ensure text is always visible when typing */
+        .footer textarea:focus,
+        .footer input[type="email"]:focus {
+            color: white !important;
+        }
+
+        .send-button {
+            background-color: var(--pure-white);
+            color: var(--primary-black);
+            font-weight: 600;
+            border-radius: 0;
+            padding: 8px 30px;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .send-button:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-2px);
+        }
+
+        .location-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .social-item span {
+            margin-right: 10px;
+            color: var(--light-gray);
+        }
+
+        .social-item a {
+            color: var(--light-gray);
+            text-decoration: none;
+        }
+
+        .social-item img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            margin-left: 10px;
+        }
+
+        .alert {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 0;
+            margin-top: 15px;
+        }
+
+        .alert-success {
+            border-left: 3px solid #28a745;
+        }
+
+        .alert-danger {
+            border-left: 3px solid #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .social-item {
+                justify-content: center;
+            }
+        }
+
+        .social-section-title {
+            text-align: right;
+        }
+
+        {% block extra_style %}{% endblock %}
+    </style>
+</head>
+<body {% block body_class %}{% endblock %}>
+<!-- Header -->
+<header class="header sticky-top">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <a href="/" class="d-flex align-items-center text-decoration-none">
+                <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
+                <span class="logo lora fs-4 d-flex align-items-center" style="color: var(--primary-black);">Beyond The Pool</span>
+            </a>
+
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        style="border-color: var(--primary-black);">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link">RODZAJE BASENÓW</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">GALERIA</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">PRZYKŁAD</a></li>
+                        <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link">O FIRMIE</a></li>
+                        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">KONTAKT</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Personal Info -->
+            <div class="col-md-4">
+                <div class="location-section">
+                    <div class="visible">ŁÓDŹ</div>
+                    <div class="half-visible">
+                        al. Politechniki 7
+                        <p>93-590 ŁÓDŹ</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="visible">Danylo Moskovchuk</div>
+                    <div class="half-visible">
+                        +48 739 064 354
+                        <p>danylomoskovchuk@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-4">
+                <div class="visible mb-3">NAPISZ DO NAS</div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="form-control mb-3"
+                           placeholder="Proszę wpisać email tutaj..." required>
+                    <textarea name="message" id="messageTextarea" class="form-control" rows="4" maxlength="200"
+                              placeholder="Proszę wpisać text tutaj..." required></textarea>
+                    <p id="charCounter" class="half-visible mt-2">Pozostało 200 symbołów</p>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="send-button">WYŚLIJ</button>
+                    </div>
+                </form>
+                {% if messages %}
+                    <div class="mt-3">
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Social Media -->
+            <div class="col-md-4">
+                <div class="visible mb-3 social-section-title">Bądż na bieżąco</div>
+                <div class="social-links">
+                    <div class="social-item">
+                        <a class="half-visible" href="#">LinkedIn</a>
+                        <img src="{% static 'images/linkedin.svg' %}" alt="LinkedIn">
+                    </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">Instagram</a>
+                        <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
+                    </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">Facebook</a>
+                        <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
+                    </div>
+                    <div class="social-item">
+                        <a class="half-visible" href="#">YouTube</a>
+                        <img src="{% static 'images/youtube.svg' %}" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+
+<!-- Character counter script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Character counter for textarea
+        const textarea = document.getElementById('messageTextarea');
+        const charCount = document.getElementById('charCounter');
+
+        if (textarea && charCount) {
+            textarea.addEventListener('input', function () {
+                const remaining = 200 - this.value.length;
+                charCount.textContent = `Pozostało ${remaining} symbołów`;
+            });
+        }
+    });
+</script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

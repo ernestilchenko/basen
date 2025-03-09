@@ -1,404 +1,121 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
 
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+{% block title %}Beyond The Pool - Kontakt{% endblock %}
+
+{% block extra_css %}
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'>
+{% endblock %}
 
-    <style>
-        :root {
-            --primary-black: #121212;
-            --secondary-black: #222222;
-            --medium-gray: #777777;
-            --light-gray: #e0e0e0;
-            --off-white: #f8f8f8;
-            --pure-white: #ffffff;
-            --accent-color: #d4d4d4;
-        }
+{% block content %}
+    <div class="container main-container">
+        <div class="row g-5">
+            <!-- Contact Information -->
+            <div class="col-12 col-lg-6">
+                <div class="contact-info h-100">
+                    <h1 class="company-name">Beyond The Pool</h1>
+                    <p class="mb-4">Łódż<br>al.Politechiki 7<br>93-574 Łódż</p>
 
-        body {
-            font-family: 'Lora', serif;
-            background-color: var(--pure-white);
-            color: var(--primary-black);
-        }
-
-        .logo {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .header {
-            background-color: var(--pure-white);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            padding: 15px 0;
-            border-bottom: 3px solid var(--primary-black);
-        }
-
-        .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--primary-black);
-            margin: 0 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -3px;
-            left: 0;
-            background-color: var(--primary-black);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--secondary-black);
-        }
-
-        .nav-link:hover:after {
-            width: 100%;
-        }
-
-        .main-container {
-            padding: 60px 20px;
-        }
-
-        .contact-info {
-            padding: 40px;
-            background-color: var(--pure-white);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 0;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--primary-black);
-        }
-
-        .company-name {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary-black);
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--light-gray);
-            padding-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .labels-info p, .value-info p {
-            margin-bottom: 15px;
-        }
-
-        .labels-info {
-            font-weight: bold;
-            color: var(--primary-black);
-        }
-
-        .map-container {
-            height: 450px;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 4px solid var(--light-gray);
-        }
-
-        .footer {
-            background-color: var(--primary-black);
-            color: var(--pure-white);
-            padding: 60px 0;
-        }
-
-        .visible {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--pure-white);
-            letter-spacing: 1px;
-        }
-
-        .half-visible {
-            opacity: 0.85;
-            color: var(--light-gray);
-        }
-
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: none;
-            border-bottom: 1px solid var(--medium-gray);
-            color: white;
-            border-radius: 0;
-            padding: 10px 5px;
-            margin-bottom: 10px;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: none;
-            border-bottom: 1px solid white;
-        }
-
-        .send-button {
-            background-color: var(--pure-white);
-            color: var(--primary-black);
-            font-weight: 600;
-            border-radius: 0;
-            padding: 8px 30px;
-            transition: all 0.3s ease;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .send-button:hover {
-            background-color: var(--light-gray);
-            transform: translateY(-2px);
-        }
-
-        .location-section {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .social-item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 15px;
-        }
-
-        .social-item span {
-            margin-right: 10px;
-            color: var(--light-gray);
-        }
-
-        .social-item a {
-            color: var(--light-gray);
-            text-decoration: none;
-        }
-
-        .social-item img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) invert(1);
-            margin-left: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .social-item {
-                justify-content: center;
-            }
-        }
-
-        .alert {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--pure-white);
-            border: none;
-            border-radius: 0;
-            margin-top: 15px;
-        }
-
-        .alert-success {
-            border-left: 3px solid #28a745;
-        }
-
-        .alert-danger {
-            border-left: 3px solid #dc3545;
-        }
-    </style>
-</head>
-<body>
-<!-- Header -->
-<header class="header sticky-top">
-    <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-center">
-            <a href="/" class="d-flex align-items-center text-decoration-none">
-                <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                <span class="logo lora fs-4" style="color: var(--primary-black);">Beyond The Pool</span>
-            </a>
-
-            <nav class="navbar navbar-expand-lg">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        style="border-color: var(--primary-black);">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link">RODZAJE BASENÓW</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">GALERIA</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">PRZYKŁAD</a></li>
-                        <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link">O FIRMIE</a></li>
-                        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">KONTAKT</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container main-container">
-    <div class="row g-5">
-        <!-- Contact Information -->
-        <div class="col-12 col-lg-6">
-            <div class="contact-info h-100">
-                <h1 class="company-name">Beyond The Pool</h1>
-                <p class="mb-4">Łódż<br>al.Politechiki 7<br>93-574 Łódż</p>
-
-                <div class="row">
-                    <div class="col-5 labels-info">
-                        <p>Przedstawiciel</p>
-                        <p>Telefon</p>
-                        <p>E-mail</p>
-                    </div>
-                    <div class="col-7 value-info">
-                        <p>Roman Beznosenko</p>
-                        <p>+48 570 099 806</p>
-                        <p>romsdsg@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Map -->
-        <div class="col-12 col-lg-6">
-            <div id="mapbox-map" class="map-container"></div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <!-- Personal Info -->
-            <div class="col-md-4">
-                <div class="location-section">
-                    <div class="visible">ŁÓDŹ</div>
-                    <div class="half-visible">
-                        al. Politechniki 7
-                        <p>93-590 ŁÓDŹ</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="visible">Danylo Moskovchuk</div>
-                    <div class="half-visible">
-                        +48 739 064 354
-                        <p>danylomoskovchuk@gmail.com</p>
+                    <div class="row">
+                        <div class="col-5 labels-info">
+                            <p>Przedstawiciel</p>
+                            <p>Telefon</p>
+                            <p>E-mail</p>
+                        </div>
+                        <div class="col-7 value-info">
+                            <p>Roman Beznosenko</p>
+                            <p>+48 570 099 806</p>
+                            <p>romsdsg@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="col-md-4">
-                <div class="visible mb-3">NAPISZ DO NAS</div>
-                <form method="POST">
-                    {% csrf_token %}
-                    <input type="email" name="email" class="form-control mb-3" placeholder="Proszę wpisać email tutaj..." required>
-                    <textarea name="message" id="messageTextarea" class="form-control" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..." required></textarea>
-                    <p id="charCounter" class="half-visible mt-2">Pozostało 200 symbołów</p>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="send-button">WYŚLIJ</button>
-                    </div>
-                </form>
-                {% if messages %}
-                <div class="mt-3">
-                    {% for message in messages %}
-                    <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            </div>
-
-            <!-- Social Media -->
-            <div class="col-md-4">
-                <div class="visible mb-3">Bądż na bieżąco</div>
-                <div class="social-links">
-                    <div class="social-item">
-                        <a class="half-visible" href="#">LinkedIn</a>
-                        <img src="{% static 'images/linkedin.svg' %}" alt="LinkedIn">
-                    </div>
-                    <div class="social-item">
-                        <a class="half-visible" href="#">Instagram</a>
-                        <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
-                    </div>
-                    <div class="social-item">
-                        <a class="half-visible" href="#">Facebook</a>
-                        <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
-                    </div>
-                    <div class="social-item">
-                        <a class="half-visible" href="#">YouTube</a>
-                        <img src="{% static 'images/youtube.svg' %}" alt="YouTube">
-                    </div>
-                </div>
+            <!-- Map -->
+            <div class="col-12 col-lg-6">
+                <div id="mapbox-map" class="map-container"></div>
             </div>
         </div>
     </div>
-</footer>
+{% endblock %}
 
-<!-- JavaScript Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+{% block extra_style %}
+    .main-container {
+    padding: 60px 20px;
+    }
 
-<!-- Custom Scripts -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Character counter for textarea
-        const textarea = document.getElementById('messageTextarea');
-        const charCount = document.getElementById('charCounter');
+    .contact-info {
+    padding: 40px;
+    background-color: var(--pure-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary-black);
+    }
 
-        textarea.addEventListener('input', function () {
-            const remaining = 200 - this.value.length;
-            charCount.textContent = `Pozostało ${remaining} symbołów`;
-        });
+    .company-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    }
 
-        // Initialize Mapbox with the provided token
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZXJuZXN0aWxjaGVua28iLCJhIjoiY202dTA2ZDk0MDM5cDJrc2FyMzgydnRjNiJ9.8T7m4maCjLmu-Nsk4v57RQ';
+    .labels-info p, .value-info p {
+    margin-bottom: 15px;
+    }
 
-        const map = new mapboxgl.Map({
-            container: 'mapbox-map',
-            style: 'mapbox://styles/mapbox/light-v11',
-            center: [19.4538411, 51.7483849],
-            zoom: 14
-        });
+    .labels-info {
+    font-weight: bold;
+    color: var(--primary-black);
+    }
 
-        // Add navigation controls
-        map.addControl(new mapboxgl.NavigationControl());
+    .map-container {
+    height: 450px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 4px solid var(--light-gray);
+    }
+{% endblock %}
 
-        // Add custom black marker
-        const markerElement = document.createElement('div');
-        markerElement.className = 'marker';
-        markerElement.style.width = '30px';
-        markerElement.style.height = '30px';
-        markerElement.style.backgroundImage = 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDM2cy0xMi0xNS01OTIuNzExLTIwLjIzYTEyIDEyIDAgMCAxLTguNTc4LTMuNjg2QTEyLjA4NyAxMi4wODcgMCAwIDEgMCAxMkMwIDUuMzczIDUuMzY4IDAgMTIgMHMxMiA1LjM3MyAxMiAxMmMwIDIuMjY3LS42MSA0LjM5Mi0xLjcxMSA2LjI5QTEyIDEyIDAgMCAxIDEyIDIyYzAgMS41OTgtMy45OTggMTMuMTEtMTIgMTMuMTFaIiBmaWxsPSIjMTIxMjEyIi8+PC9zdmc+Cg==)';
-        markerElement.style.backgroundSize = 'contain';
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Mapbox with the provided token
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZXJuZXN0aWxjaGVua28iLCJhIjoiY202dTA2ZDk0MDM5cDJrc2FyMzgydnRjNiJ9.8T7m4maCjLmu-Nsk4v57RQ';
 
-        // Add marker with custom black styling
-        new mapboxgl.Marker(markerElement)
-            .setLngLat([19.4538411, 51.7483849])
-            .setPopup(new mapboxgl.Popup({offset: 25})
-                .setHTML(`
+            const map = new mapboxgl.Map({
+                container: 'mapbox-map',
+                style: 'mapbox://styles/mapbox/light-v11',
+                center: [19.4538411, 51.7483849],
+                zoom: 14
+            });
+
+            // Add navigation controls
+            map.addControl(new mapboxgl.NavigationControl());
+
+            // Add custom black marker
+            const markerElement = document.createElement('div');
+            markerElement.className = 'marker';
+            markerElement.style.width = '30px';
+            markerElement.style.height = '30px';
+            markerElement.style.backgroundImage = 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDM2cy0xMi0xNS01OTIuNzExLTIwLjIzYTEyIDEyIDAgMCAxLTguNTc4LTMuNjg2QTEyLjA4NyAxMi4wODcgMCAwIDEgMCAxMkMwIDUuMzczIDUuMzY4IDAgMTIgMHMxMiA1LjM3MyAxMiAxMmMwIDIuMjY3LS42MSA0LjM5Mi0xLjcxMSA2LjI5QTEyIDEyIDAgMCAxIDEyIDIyYzAgMS41OTgtMy45OTggMTMuMTEtMTIgMTMuMTFaIiBmaWxsPSIjMTIxMjEyIi8+PC9zdmc+Cg==)';
+            markerElement.style.backgroundSize = 'contain';
+
+            // Add marker with custom black styling
+            new mapboxgl.Marker(markerElement)
+                .setLngLat([19.4538411, 51.7483849])
+                .setPopup(new mapboxgl.Popup({offset: 25})
+                    .setHTML(`
                     <div style="color: #121212; font-family: 'Lora', serif;">
                         <h6 style="margin-bottom: 5px; border-bottom: 1px solid #cccccc; padding-bottom: 5px;">Beyond The Pool</h6>
                         <p style="margin: 0;">al. Politechniki 7<br>93-574 Łódż</p>
                     </div>
                 `))
-            .addTo(map);
-    });
-</script>
-</body>
-</html>
+                .addTo(map);
+        });
+    </script>
+{% endblock %}

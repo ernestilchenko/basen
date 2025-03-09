@@ -1,463 +1,299 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond The Pool - O Firmie</title>
-
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    {#    <!-- Custom CSS -->#}
-    {#    <link rel="stylesheet" href="{% static 'css/style.css' %}">#}
-    {#    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">#}
-
-    <style>
-        :root {
-            --primary-black: #121212;
-            --secondary-black: #222222;
-            --medium-gray: #777777;
-            --light-gray: #e0e0e0;
-            --off-white: #f8f8f8;
-            --pure-white: #ffffff;
-        }
-
-        body {
-            font-family: 'Lora', serif;
-            background-color: var(--pure-white);
-            color: var(--primary-black);
-            overflow-x: hidden;
-        }
-
-        .logo {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .header {
-            background-color: var(--pure-white);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            padding: 15px 0;
-            border-bottom: 3px solid var(--primary-black);
-            z-index: 100;
-        }
-
-        .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--primary-black);
-            margin: 0 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -3px;
-            left: 0;
-            background-color: var(--primary-black);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--secondary-black);
-        }
-
-        .nav-link:hover:after {
-            width: 100%;
-        }
-
-        /* First Screen */
-        .first-screen {
-            height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}");
-            background-size: cover;
-            background-position: center;
-            color: var(--pure-white);
-            position: relative;
-        }
-
-        .first-screen-title {
-            margin-left: auto;
-            text-align: right;
-        }
-
-        .first-screen .title {
-            font-size: 5vw;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .first-screen .subtitle {
-            font-size: 2.5vw;
-            font-weight: 400;
-            line-height: 1.3;
-        }
-
-        /* See More Button - Centered */
-        .see-more {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            width: 100%;
-            color: var(--pure-white);
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .see-more .capture {
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .see-more .arrow img {
-            width: 30px;
-            filter: invert(1);
-            margin: 0 auto;
-            display: block;
-            animation: bounceArrow 2s infinite;
-        }
-
-        @keyframes bounceArrow {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Fourth Screen (Carousel) */
-        .fourth-screen {
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .fourth-screen .carousel,
-        .fourth-screen .carousel-inner,
-        .fourth-screen .carousel-item {
-            height: 100vh;
-        }
-
-        .fourth-screen img {
-            height: 100vh;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .carousel-item-inner {
-            position: relative;
-            height: 100%;
-        }
-
-        .big-title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-        }
-
-        .fourth-screen-title {
-            margin-left: auto;
-            text-align: right;
-            padding-top: 100px;
-        }
-
-        .fourth-screen .title {
-            font-size: 5vw;
-            font-weight: 700;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .fourth-screen .subtitle {
-            font-size: 2.5vw;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Popup */
-        .popup {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 0;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-            max-width: 80%;
-            width: 500px;
-            z-index: 20;
-            text-align: center;
-        }
-
-        .popup.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .popup h3 {
-            color: var(--primary-black);
-            margin-bottom: 20px;
-            font-weight: 700;
-            font-family: 'Lora', serif;
-        }
-
-        .popup p {
-            color: var(--secondary-black);
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* Second Screen */
-        .second-screen {
-            padding: 100px 0;
-            background-color: var(--off-white);
-        }
-
-        .circle-item {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: var(--primary-black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .circle img {
-            width: 60px;
-            height: 60px;
-            filter: invert(1);
-        }
-
-        .nums {
-            font-size: 3rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .circle-capture {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            color: var(--primary-black);
-            max-width: 200px;
-            margin: 0 auto;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-black);
-            color: var(--pure-white);
-            padding: 60px 0;
-        }
-
-        .visible {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--pure-white);
-            letter-spacing: 1px;
-        }
-
-        .half-visible {
-            opacity: 0.85;
-            color: var(--light-gray);
-        }
-
-        .form-control {
-            border: none;
-            border-bottom: 1px solid var(--medium-gray);
-            border-radius: 0;
-            padding: 10px 5px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--pure-white);
-            transition: all 0.3s ease;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--pure-white);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-primary {
-            background-color: var(--pure-white);
-            color: var(--primary-black);
-            border: none;
-            padding: 10px 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--light-gray);
-            color: var(--primary-black);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Social Media Links */
-        .socials {
-            text-align: right;
-        }
-
-        .social {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .social img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-            margin-left: 15px;
-        }
-
-        .social a {
-            color: var(--pure-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social a:hover {
-            color: var(--light-gray);
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .first-screen .title, .fourth-screen .title {
-                font-size: 8vw;
-            }
-
-            .first-screen .subtitle, .fourth-screen .subtitle {
-                font-size: 4vw;
-            }
-
-            .circle {
-                width: 120px;
-                height: 120px;
-            }
-
-            .nums {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .socials {
-                text-align: center;
-                margin-top: 30px;
-            }
-
-            .social {
-                justify-content: center;
-            }
-
-            .first-screen-title, .fourth-screen-title {
-                text-align: center;
-                margin-left: 0;
-            }
-
-            .circle-item {
-                margin-bottom: 30px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-            }
-
-            .personal-info, .send-form, .socials {
-                width: 100%;
-            }
-        }
-
-        .alert {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--pure-white);
-            border: none;
-            border-radius: 0;
-            margin-top: 15px;
-        }
-
-        .alert-success {
-            border-left: 3px solid #28a745;
-        }
-
-        .alert-danger {
-            border-left: 3px solid #dc3545;
-        }
-    </style>
-</head>
-<body class="start">
-<!-- Header -->
-<header class="header sticky-top">
-    <div class="container col-10 d-flex justify-content-between align-items-center">
-        <a href="/" class="d-flex align-items-center text-decoration-none">
-            <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-            <span class="logo lora fs-4" style="color: var(--primary-black);">Beyond The Pool</span>
-        </a>
-
-        <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    style="border-color: var(--primary-black);">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="{% url 'basen' %}" class="nav-link">RODZAJE BASENÓW</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">GALERIA</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">PRZYKŁAD</a></li>
-                    <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link">O FIRMIE</a></li>
-                    <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">KONTAKT</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
 
+{% block title %}Beyond The Pool - O Firmie{% endblock %}
+
+{% block extra_css %}
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body_class %}start{% endblock %}
+
+{% block extra_style %}
+/* First Screen */
+.first-screen {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    color: var(--pure-white);
+    position: relative;
+}
+
+.first-screen-title {
+    margin-left: auto;
+    text-align: right;
+}
+
+.first-screen .title {
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.first-screen .subtitle {
+    font-size: 2.5vw;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* See More Button - Centered */
+.see-more {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    color: var(--pure-white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.see-more .capture {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.see-more .arrow img {
+    width: 30px;
+    filter: invert(1);
+    margin: 0 auto;
+    display: block;
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Fourth Screen (Carousel) */
+.fourth-screen {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.fourth-screen .carousel,
+.fourth-screen .carousel-inner,
+.fourth-screen .carousel-item {
+    height: 100vh;
+}
+
+.fourth-screen img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item-inner {
+    position: relative;
+    height: 100%;
+}
+
+.big-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.fourth-screen-title {
+    margin-left: auto;
+    text-align: right;
+    padding-top: 100px;
+}
+
+.fourth-screen .title {
+    font-size: 5vw;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fourth-screen .subtitle {
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 0;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    max-width: 80%;
+    width: 500px;
+    z-index: 20;
+    text-align: center;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup h3 {
+    color: var(--primary-black);
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+}
+
+.popup p {
+    color: var(--secondary-black);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Second Screen */
+.second-screen {
+    padding: 100px 0;
+    background-color: var(--off-white);
+}
+
+.circle-item {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.circle img {
+    width: 60px;
+    height: 60px;
+    filter: invert(1);
+}
+
+.nums {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.circle-capture {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--primary-black);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Social Media Links */
+.socials {
+    text-align: right;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    margin-left: 15px;
+}
+
+.social a {
+    color: var(--pure-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--light-gray);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .first-screen .title, .fourth-screen .title {
+        font-size: 8vw;
+    }
+
+    .first-screen .subtitle, .fourth-screen .subtitle {
+        font-size: 4vw;
+    }
+
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nums {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .socials {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .first-screen-title, .fourth-screen-title {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .circle-item {
+        margin-bottom: 30px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .personal-info, .send-form, .socials {
+        width: 100%;
+    }
+}
+{% endblock %}
+
+{% block content %}
 <main>
     <!-- First Screen -->
     <div class="first-screen d-grid">
@@ -589,88 +425,10 @@
         </div>
     </div>
 </main>
+{% endblock %}
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <!-- Personal Info -->
-            <div class="col-md-4">
-                <div class="mb-4">
-                    <div class="visible">ŁÓDŹ</div>
-                    <div class="half-visible">
-                        al. Politechniki 7
-                        <p>93-590 ŁÓDŹ</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="visible">Danylo Moskovchuk</div>
-                    <div class="half-visible">
-                        +48 739 064 354
-                        <p>danylomoskovchuk@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="col-md-4">
-                <div class="visible mb-3">NAPISZ DO NAS</div>
-                <form method="POST">
-                    {% csrf_token %}
-                    <input type="email" name="email" class="form-control mb-3"
-                           placeholder="Proszę wpisać email tutaj..." required>
-                    <textarea id="messageTextarea" name="message" class="form-control" rows="4" maxlength="200"
-                              placeholder="Proszę wpisać text tutaj..." required></textarea>
-                    <p id="charCounter" class="half-visible mt-2">Pozostało 200 symbołów</p>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary">WYŚLIJ</button>
-                    </div>
-                </form>
-                {% if messages %}
-                    <div class="mt-3">
-                        {% for message in messages %}
-                            <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-
-            <!-- Social Media - RIGHT ALIGNED -->
-            <div class="col-md-4">
-                <div class="socials">
-                    <div class="visible mb-4">Bądż na bieżąco</div>
-
-                    <div class="social">
-                        <a class="half-visible" href="#">LinkedIn</a>
-                        <img src="{% static 'images/linkedin.svg' %}" alt="LinkedIn">
-                    </div>
-
-                    <div class="social">
-                        <a class="half-visible" href="#">Instagram</a>
-                        <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
-                    </div>
-
-                    <div class="social">
-                        <a class="half-visible" href="#">Facebook</a>
-                        <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
-                    </div>
-
-                    <div class="social">
-                        <a class="half-visible" href="#">YouTube</a>
-                        <img src="{% static 'images/youtube.svg' %}" alt="YouTube">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% block extra_js %}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
     // Initialize on document load
     document.addEventListener('DOMContentLoaded', function () {
@@ -715,17 +473,6 @@
                 popup.classList.add('show');
             }
         }, 3000);
-
-        // Textarea character counter
-        const textarea = document.getElementById('messageTextarea');
-        const charCount = document.getElementById('charCounter');
-
-        if (textarea && charCount) {
-            textarea.addEventListener('input', () => {
-                const remaining = 200 - textarea.value.length;
-                charCount.textContent = `Pozostało ${remaining} symbołów`;
-            });
-        }
     });
 
     // Counting animation functions
@@ -776,5 +523,4 @@
         countToFive();
     }
 </script>
-</body>
-</html>
+{% endblock %}
