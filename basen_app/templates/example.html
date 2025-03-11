@@ -19,6 +19,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="{% static 'js/showTab.js' %}"></script>
     </head>
     <body>
         <header class="header sticky-top flex-wrap justify-content-center">
@@ -90,111 +91,21 @@
                 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
             </div>
             <div class="container-description">
-                <div class="grid">
-                    <div class="row">
-                        <div class="col">
-                            <div class="row align-items-center justify-content-center">
-                                <dic class="col-4">
-                                    <img src="{% static 'css/images/steel.jpg' %}">
-                                </dic>
-                                <dic class="col-6">
-                                    <p class="description-header">Moc</p>
-                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-                                </dic>
-                            </div>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button class="tab-button" onclick="showTab(0)">Tab 1</button>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="row align-items-center justify-content-center">
-                                <dic class="col-4">
-                                    <img src="{% static 'css/images/steel.jpg' %}">
-                                </dic>
-                                <dic class="col-6">
-                                    <p class="description-header">Potęga</p>
-                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-                                </dic>
-                            </div>
-                        </div>
+                    <div class="col-auto">
+                        <button class="tab-button" onclick="showTab(1)">Tab 2</button>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="row align-items-center justify-content-center">
-                                <dic class="col-4">
-                                    <img src="{% static 'css/images/steel.jpg' %}">
-                                </dic>
-                                <dic class="col-6">
-                                    <p class="description-header">Kolor</p>
-                                    <p class="description-text">Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                                        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-                                </dic>
-                            </div>
-                        </div>
+                    <div class="col-auto">
+                        <button class="tab-button" onclick="showTab(2)">Tab 2</button>
                     </div>
                 </div>
-            </div>
-            <div class="container-proccess">
-                <div class="third-screen d-flex align-items-center">
-                    <div class="third-screen-inner col-12 d-block align-items-center">
-                        
-                        <div class="third-screen-inner-content">
-                            <div class="third-screen-inner-line  col-12 ">
-                                <div class="third-screen-inner-title  align-items-center lora ">PRZEŻYJ TEN PROCES Z NAMI</div>
-                                <div class="container-sm col-10">
-                                    <div class="row">
-                                        <div class="col-md-8 mx-auto">
-                                            <div id="myCarousel" class="carousel slide third" data-ride="carousel">
-                                
-                                                <ol class="carousel-indicators">
-                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                                                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                                                </ol>   
-                                                
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="{%static 'images/proces1.png'%}" alt="">
-                                                        <div class="image-capture lora"><div class="title-capt">Cięcie i przygotowanie materiału</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="{%static 'images/proces2.png'%}"  alt="">
-                                                        <div class="image-capture lora"><div class="title-capt">Gięcie i formowanie elementów</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="{%static 'images/proces3.png'%}" alt="">
-                                                        <div class="image-capture lora"><div class="title-capt">Spawanie i łączenie elementów</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
-                                                    </div>	
-                                                    <div class="carousel-item">
-                                                        <img src="{%static 'images/proces4.png'%}" alt="">
-                                                        <div class="image-capture lora"><div class="title-capt">Obróbka wykończeniowa</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="{%static 'images/proces5.png'%}" class="img" alt="">
-                                                        <div class="image-capture lora"><div class="title-capt">Montaż akcesoriów i finalne testy</div><!--<div class="subtitle-capt">Coś robimy, coś bierzemy</div>--></div>
-                                                    </div>					
-                                                </div>
-                                               
-                                                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                                    <span><i class="fa fa-angle-left"></i></span>
-                                                </a>
-                                                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                                                    <span><i class="fa fa-angle-right"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  
+                <div class="tab-content" id="tab-0">Content for Tab 1</div>
+                <div class="tab-content" id="tab-1">Content for Tab 2</div>
+                <div class="tab-content" id="tab-2">Content for Tab 3</div>
             </div>
         </div>
         <footer class="footer lora">
