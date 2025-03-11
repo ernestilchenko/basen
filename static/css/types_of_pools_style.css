@@ -80,7 +80,7 @@ model-viewer {
     background: url('images/example-description.png') no-repeat center center;
     background-size: cover;
     background-position: center center;
-    height: 150vh;
+    height: 100vh;
     width: auto;
     justify-content: center;
     display: flex;
@@ -296,4 +296,4 @@ div.third-screen-inner-line{
             background: #303536;
             border-color: #303536;
         }
-}
+}       

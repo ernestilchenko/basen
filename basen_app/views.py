@@ -26,3 +26,6 @@ def gallery(request):
 
 def example(request):
     return render(request, "example.html")
+
+def typesOfPools(request):
+    return render(request, "types_of_pools.html")
