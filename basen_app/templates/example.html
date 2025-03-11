@@ -93,19 +93,49 @@
             <div class="container-description">
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <button class="tab-button" onclick="showTab(0)">Tab 1</button>
+                        <button class="tab-button" onclick="showTab(0)">WYMIARY</button>
                     </div>
                     <div class="col-auto">
-                        <button class="tab-button" onclick="showTab(1)">Tab 2</button>
+                        <button class="tab-button" onclick="showTab(1)">MATERIAŁ</button>
                     </div>
                     <div class="col-auto">
-                        <button class="tab-button" onclick="showTab(2)">Tab 2</button>
+                        <button class="tab-button" onclick="showTab(2)">WIĘCEJ</button>
                     </div>
                 </div>
                   
-                <div class="tab-content" id="tab-0">Content for Tab 1</div>
-                <div class="tab-content" id="tab-1">Content for Tab 2</div>
-                <div class="tab-content" id="tab-2">Content for Tab 3</div>
+                <div class="tab-content" id="tab-0">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                            <img src="{% static 'images/draft-pool.jpg' %}">
+                        </div>
+                        <div class="col-auto text-start">
+                            <p class="description-header">Wymiary basenu</p>
+                            <p class="description-tekst">Długość-Szerokość-Głębokość: 960-330-150 (cm)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab-1">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                            <img src="{% static 'images/stainless-steel.webp' %}">
+                        </div>
+                        <div class="col-auto text-start">
+                            <p class="description-header">Stal nierdzewna</p>
+                            <p class="description-tekst">AISI 304 (1.4301)</p>
+                            <p class="description-tekst">Grubość ścianki: 3.5mm<br>Grubość dna: 3mm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab-2">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-auto">
+                            <p class="description-header">Dokumentacja</p>
+                            <a href="{% static 'pdf/documentation_1.pdf' %}" download="documentation.pdf">
+                                <button class="download-button">Pobierz PDF</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer lora">

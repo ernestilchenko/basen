@@ -116,13 +116,48 @@ model-viewer {
 }
 
 .tab-content {
-    display: none; 
+    display: block;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .tab-content.active {
-    display: block;
+    opacity: 1;
+    max-height: 500px;
 }
 
+
+.tab-content .description-header{
+    font-family: 'Lora';
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.tab-content .description-tekst{
+    font-family: 'Lora';
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.download-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Lora';
+    font-weight: 600;
+    color: #fff;
+    background-color: #cdd8e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
 
   
