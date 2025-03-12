@@ -86,3 +86,39 @@ def aboutUs(request):
         return redirect('about-us')
 
     return render(request, 'about_us.html')
+
+
+def gallery(request):
+    """
+    View function for the gallery page that also handles email submissions
+    from the footer contact form.
+    """
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if email and message:
+            try:
+                # Translatable subject line
+                subject = _('New message from Gallery page: {email}').format(email=email)
+
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email='messengerproject64@gmail.com',  # Use your configured email
+                    recipient_list=['7777erik777@gmail.com'],  # Target email address
+                    fail_silently=False,
+                )
+                # Success message
+                messages.success(request, _('Message has been sent!'))
+            except Exception as e:
+                # Error message
+                messages.error(request, _('An error occurred while sending the message.'))
+        else:
+            # Missing fields message
+            messages.error(request, _('Please fill in all fields.'))
+
+        return redirect('gallery')  # Redirect back to gallery page
+
+    # If it's a GET request, just render the gallery template
+    return render(request, 'gallery.html')
