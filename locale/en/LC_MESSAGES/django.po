@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beyond The Pool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 12:00+0000\n"
-"PO-Revision-Date: 2025-03-09 12:00+0000\n"
+"POT-Creation-Date: 2025-03-11 12:00+0000\n"
+"PO-Revision-Date: 2025-03-11 12:00+0000\n"
 "Last-Translator: Danylo Moskovchuk\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -85,6 +85,7 @@ msgstr "SEND"
 msgid "Stay up to date"
 msgstr "Stay up to date"
 
+# Navigation
 msgid "POOL TYPES"
 msgstr "POOL TYPES"
 
@@ -99,3 +100,73 @@ msgstr "ABOUT US"
 
 msgid "CONTACT"
 msgstr "CONTACT"
+
+# Home page
+msgid "Beyond The Pool - Premium Pools"
+msgstr "Beyond The Pool - Premium Pools"
+
+msgid "Pools that exceed expectations"
+msgstr "Pools that exceed expectations"
+
+msgid "SEE MORE"
+msgstr "SEE MORE"
+
+msgid "WE GUARANTEE QUALITY"
+msgstr "WE GUARANTEE QUALITY"
+
+msgid "WE ARE THE BEST IN THE REGION"
+msgstr "WE ARE THE BEST IN THE REGION"
+
+msgid "COMPLETED PROJECTS"
+msgstr "COMPLETED PROJECTS"
+
+msgid "YEARS OF EXPERIENCE"
+msgstr "YEARS OF EXPERIENCE"
+
+msgid "EXPERIENCE THE PROCESS WITH US"
+msgstr "EXPERIENCE THE PROCESS WITH US"
+
+msgid "Stage 1"
+msgstr "Stage 1"
+
+msgid "Consultation and Design"
+msgstr "Consultation and Design"
+
+msgid "Stage 2"
+msgstr "Stage 2"
+
+msgid "Planning and Preparation"
+msgstr "Planning and Preparation"
+
+msgid "Stage 3"
+msgstr "Stage 3"
+
+msgid "Manufacturing"
+msgstr "Manufacturing"
+
+msgid "Stage 4"
+msgstr "Stage 4"
+
+msgid "Installation"
+msgstr "Installation"
+
+msgid "Stage 5"
+msgstr "Stage 5"
+
+msgid "Final Touches and Handover"
+msgstr "Final Touches and Handover"
+
+msgid "Your best choice among other options"
+msgstr "Your best choice among other options"
+
+msgid "We guarantee quality and elegant look"
+msgstr "We guarantee quality and elegant look"
+
+msgid "Learn More"
+msgstr "Learn More"
+
+msgid "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+msgstr "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+
+msgid "More"
+msgstr "More"

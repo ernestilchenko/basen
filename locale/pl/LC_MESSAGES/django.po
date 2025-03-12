@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beyond The Pool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 12:00+0000\n"
-"PO-Revision-Date: 2025-03-09 12:00+0000\n"
+"POT-Creation-Date: 2025-03-11 12:00+0000\n"
+"PO-Revision-Date: 2025-03-11 12:00+0000\n"
 "Last-Translator: Danylo Moskovchuk\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -85,6 +85,7 @@ msgstr "WYŚLIJ"
 msgid "Stay up to date"
 msgstr "Bądź na bieżąco"
 
+# Navigation
 msgid "POOL TYPES"
 msgstr "RODZAJE BASENÓW"
 
@@ -99,3 +100,73 @@ msgstr "O FIRMIE"
 
 msgid "CONTACT"
 msgstr "KONTAKT"
+
+# Home page
+msgid "Beyond The Pool - Premium Pools"
+msgstr "Beyond The Pool - Baseny Premium"
+
+msgid "Pools that exceed expectations"
+msgstr "Baseny, które przekraczają oczekiwania"
+
+msgid "SEE MORE"
+msgstr "ZOBACZ WIĘCEJ"
+
+msgid "WE GUARANTEE QUALITY"
+msgstr "GWARANTUJEMY JAKOŚĆ"
+
+msgid "WE ARE THE BEST IN THE REGION"
+msgstr "JESTEŚMY NAJLEPSI W SWOIM REGIONIE"
+
+msgid "COMPLETED PROJECTS"
+msgstr "ZREALIZOWANYCH PROJEKTÓW"
+
+msgid "YEARS OF EXPERIENCE"
+msgstr "LAT DOŚWIADCZENIA"
+
+msgid "EXPERIENCE THE PROCESS WITH US"
+msgstr "PRZEŻYJ TEN PROCES Z NAMI"
+
+msgid "Stage 1"
+msgstr "Etap 1"
+
+msgid "Consultation and Design"
+msgstr "Konsultacja i projektowanie"
+
+msgid "Stage 2"
+msgstr "Etap 2"
+
+msgid "Planning and Preparation"
+msgstr "Planowanie i przygotowanie"
+
+msgid "Stage 3"
+msgstr "Etap 3"
+
+msgid "Manufacturing"
+msgstr "Produkcja"
+
+msgid "Stage 4"
+msgstr "Etap 4"
+
+msgid "Installation"
+msgstr "Instalacja"
+
+msgid "Stage 5"
+msgstr "Etap 5"
+
+msgid "Final Touches and Handover"
+msgstr "Wykończenie i przekazanie"
+
+msgid "Your best choice among other options"
+msgstr "Najlepszy twój wybór spośród innych wariantów"
+
+msgid "We guarantee quality and elegant look"
+msgstr "Gwarantujemy jakość i elegancki wygląd"
+
+msgid "Learn More"
+msgstr "Dowiedz się więcej"
+
+msgid "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+msgstr "Oferujemy najlepszy wybór basenów ze stali nierdzewnej. Przeprowadzamy cały proces od projektowania, do instalacji gotowego produktu w dowolnej lokalizacji."
+
+msgid "More"
+msgstr "Więcej"

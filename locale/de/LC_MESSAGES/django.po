@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Beyond The Pool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 12:00+0000\n"
-"PO-Revision-Date: 2025-03-09 12:00+0000\n"
+"POT-Creation-Date: 2025-03-11 12:00+0000\n"
+"PO-Revision-Date: 2025-03-11 12:00+0000\n"
 "Last-Translator: Danylo Moskovchuk\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -99,3 +99,73 @@ msgstr "ÜBER UNS"
 
 msgid "CONTACT"
 msgstr "KONTAKT"
+
+# Home page
+msgid "Beyond The Pool - Premium Pools"
+msgstr "Beyond The Pool - Premium Schwimmbecken"
+
+msgid "Pools that exceed expectations"
+msgstr "Schwimmbäder, die Erwartungen übertreffen"
+
+msgid "SEE MORE"
+msgstr "MEHR SEHEN"
+
+msgid "WE GUARANTEE QUALITY"
+msgstr "WIR GARANTIEREN QUALITÄT"
+
+msgid "WE ARE THE BEST IN THE REGION"
+msgstr "WIR SIND DIE BESTEN IN DER REGION"
+
+msgid "COMPLETED PROJECTS"
+msgstr "ABGESCHLOSSENE PROJEKTE"
+
+msgid "YEARS OF EXPERIENCE"
+msgstr "JAHRE ERFAHRUNG"
+
+msgid "EXPERIENCE THE PROCESS WITH US"
+msgstr "ERLEBEN SIE DEN PROZESS MIT UNS"
+
+msgid "Stage 1"
+msgstr "Phase 1"
+
+msgid "Consultation and Design"
+msgstr "Beratung und Design"
+
+msgid "Stage 2"
+msgstr "Phase 2"
+
+msgid "Planning and Preparation"
+msgstr "Planung und Vorbereitung"
+
+msgid "Stage 3"
+msgstr "Phase 3"
+
+msgid "Manufacturing"
+msgstr "Herstellung"
+
+msgid "Stage 4"
+msgstr "Phase 4"
+
+msgid "Installation"
+msgstr "Installation"
+
+msgid "Stage 5"
+msgstr "Phase 5"
+
+msgid "Final Touches and Handover"
+msgstr "Letzte Feinheiten und Übergabe"
+
+msgid "Your best choice among other options"
+msgstr "Ihre beste Wahl unter anderen Optionen"
+
+msgid "We guarantee quality and elegant look"
+msgstr "Wir garantieren Qualität und elegantes Aussehen"
+
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+msgid "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+msgstr "Wir bieten die beste Auswahl an Edelstahlpools. Wir übernehmen den gesamten Prozess vom Design bis zur Installation des fertigen Produkts an jedem Standort."
+
+msgid "More"
+msgstr "Mehr"
