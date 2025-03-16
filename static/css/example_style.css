@@ -1,3 +1,65 @@
+html {
+    box-sizing: border-box;
+    height: auto;
+    background-image: none;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+ /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 400 to 700 */
+
+.lora{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root.dark{
+    body{
+        background: rgba(0, 0, 0, 0.9);
+        div.second-screen-content-circles-circle{
+            background: #000;
+        }
+    }
+    p.title-3dmodel{
+        color:#c2d9df;
+    }
+    div.container-main{
+        background: rgba(0, 0, 0, 0.9);
+    }
+    model-viewer{
+        background: #000;
+    }
+    .tab-button.active {
+        color: #cdd8e4;
+    }
+    .tab-button {
+        color:#8f9da1;
+    }
+    .tab-button:hover {
+        color: #c2d9df;
+    }
+    div.col-auto.text-start, p.description-header{
+        color:#8f9da1;
+    }
+}
+:root {
+    --bg-color:  rgba(124, 164, 255, 0.2);
+    --text-color: black;
+}
+
+body{
+    background:var(--bg-color);
+}
+
+p.title-3dmodel{
+    color:#50585A;
+}
+
 div.first-screen{
     height: calc(100vh - 50px);
     width: auto;
@@ -73,7 +135,7 @@ div.see-more{
 model-viewer {
     width: 100%;
     height: 500px;
-    background-color: #cdd8e4;
+    background-color: #ffffff;
     border-radius: 25px;
 }
 
