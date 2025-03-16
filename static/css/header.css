@@ -140,6 +140,11 @@ button.selected{
                 background: #52595b;
                 color: white;
             }
+
+            select.langs{
+                background: #000;
+                transition: .4;
+            }
         }
     }
 }
