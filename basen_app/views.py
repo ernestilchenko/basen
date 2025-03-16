@@ -122,3 +122,38 @@ def gallery(request):
 
     # If it's a GET request, just render the gallery template
     return render(request, 'gallery.html')
+
+
+def example(request):
+    """
+    View function for the example page that shows a 3D model of a pool.
+    Also handles contact form submission from the footer.
+    """
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if email and message:
+            try:
+                # Translatable subject line
+                subject = _('New message from Example page: {email}').format(email=email)
+
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email='messengerproject64@gmail.com',
+                    recipient_list=['7777erik777@gmail.com'],
+                    fail_silently=False,
+                )
+                # Success message
+                messages.success(request, _('Message has been sent!'))
+            except Exception as e:
+                # Error message
+                messages.error(request, _('An error occurred while sending the message.'))
+        else:
+            # Missing fields message
+            messages.error(request, _('Please fill in all fields.'))
+
+        return redirect('example')
+
+    return render(request, 'example.html')
