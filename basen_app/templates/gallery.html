@@ -5,46 +5,44 @@
 {% block title %}{% trans "Beyond The Pool - Gallery" %}{% endblock %}
 
 {% block extra_css %}
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
 {% block body_class %}gallery-page{% endblock %}
 
 {% block extra_style %}
-    /* First Screen - Exact same styling approach as home.html */
-    .first-screen {
+/* First Screen - Exact same styling approach as home.html */
+.first-screen {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}
-    ");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}");
     background-size: cover;
     background-position: center;
     color: var(--pure-white);
     position: relative;
-    }
+}
 
-    .first-screen-title {
+.first-screen-title {
     margin-left: auto;
     text-align: right;
-    }
+}
 
-    .first-screen .title {
+.first-screen .title {
     font-size: 5vw;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    }
+}
 
-    .first-screen .subtitle {
+.first-screen .subtitle {
     font-size: 2.5vw;
     font-weight: 400;
     line-height: 1.3;
-    }
+}
 
-    /* See More Button - FIXED CENTERED like in home.html */
-    .see-more {
+/* See More Button - FIXED CENTERED like in home.html */
+.see-more {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -54,239 +52,239 @@
     color: var(--pure-white);
     font-weight: 600;
     cursor: pointer;
-    }
+}
 
-    .see-more .capture {
+.see-more .capture {
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    }
+}
 
-    .see-more .arrow img {
+.see-more .arrow img {
     width: 30px;
     filter: invert(1);
     margin: 0 auto;
     display: block;
     animation: bounceArrow 2s infinite;
-    }
+}
 
-    @keyframes bounceArrow {
+@keyframes bounceArrow {
     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-    transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-    transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-    }
+}
 
-    /* Main Gallery */
-    .main-gallery {
+/* Main Gallery */
+.main-gallery {
     padding: 60px 0;
     background-color: var(--off-white);
-    }
+}
 
-    .main-gallery .container .row {
+.main-gallery .container .row {
     margin-bottom: 30px;
-    }
+}
 
-    .main-gallery .container .row img {
+.main-gallery .container .row img {
     border-radius: 13px;
     cursor: pointer;
     transition: transform 400ms ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    }
+}
 
-    .main-gallery .container .row img:hover {
+.main-gallery .container .row img:hover {
     transform: scale(1.03);
-    }
+}
 
-    /* Second Gallery - Text and Images */
-    .second-gallery {
+/* Second Gallery - Text and Images */
+.second-gallery {
     padding: 60px 0;
     background-color: var(--pure-white);
-    }
+}
 
-    .second-gallery .container .row {
+.second-gallery .container .row {
     margin-bottom: 40px;
-    }
+}
 
-    .second-gallery .container .row img {
+.second-gallery .container .row img {
     border-radius: 13px;
     cursor: pointer;
     transition: transform 400ms ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+}
 
-    .second-gallery .container .row img:hover {
+.second-gallery .container .row img:hover {
     transform: scale(1.03);
-    }
+}
 
-    .text-header {
+.text-header {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     font-family: 'Lora', serif;
     color: var(--primary-black);
-    }
+}
 
-    .text-text {
+.text-text {
     font-size: 1.2rem;
     line-height: 1.6;
     font-family: 'Lora', serif;
     color: var(--secondary-black);
-    }
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 992px) {
+/* Responsive adjustments */
+@media (max-width: 992px) {
     .first-screen .title {
-    font-size: 8vw;
+        font-size: 8vw;
     }
 
     .first-screen .subtitle {
-    font-size: 4vw;
+        font-size: 4vw;
     }
 
     .text-header {
-    font-size: 2rem;
+        font-size: 2rem;
     }
 
     .text-text {
-    font-size: 1rem;
+        font-size: 1rem;
     }
-    }
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .first-screen-title {
-    text-align: center;
-    margin-left: 0;
+        text-align: center;
+        margin-left: 0;
     }
-    }
+}
 {% endblock %}
 
 {% block content %}
-    <!-- First Screen - Using EXACT structure from home.html-->
-    <div class="first-screen d-grid">
-        <div class="big-title container col-10 d-flex align-items-center">
-            <div class="first-screen-title col-10">
-                <div class="capture">
-                    <div class="title">
-                        {% trans "We have something to show you" %}
-                    </div>
-                    <div class="subtitle">
-                        {% trans "See our work" %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fixed centered See More button -->
-        <div class="see-more">
+<!-- First Screen - Using EXACT structure from home.html-->
+<div class="first-screen d-grid">
+    <div class="big-title container col-10 d-flex align-items-center">
+        <div class="first-screen-title col-10">
             <div class="capture">
-                {% trans "SEE MORE" %}
-            </div>
-            <div class="arrow">
-                <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Gallery (Grid Layout) -->
-    <div class="main-gallery">
-        <div class="container">
-            <div class="row align-items-center" data-aos="fade-up">
-                <div class="col-md-3 col-sm-6">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+                <div class="title">
+                    {% trans "We have something to show you" %}
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <img src="{% static 'images/image1_.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-            </div>
-
-            <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-md-6">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-                <div class="col-md-6">
-                    <img src="{% static 'images/image1_.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-            </div>
-
-            <div class="row align-items-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-md-4">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
-                </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+                <div class="subtitle">
+                    {% trans "See our work" %}
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Second Gallery (Alternating Text and Images) -->
-    <div class="second-gallery">
-        <div class="container">
-            <div class="row align-items-center g-4" data-aos="fade-right">
-                <div class="col-lg-5 col-md-6">
-                    <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Premium Pool">
-                </div>
-                <div class="col-lg-7 col-md-6">
-                    <p class="text-header">{% trans "Premium Stainless Steel Pools" %}</p>
-                    <p class="text-text">
-                        {% trans "Our premium stainless steel pools combine durability with elegant design. Each pool is custom-made to meet the specific requirements of our clients, ensuring perfect integration with any landscape or architectural style. The superior quality of stainless steel guarantees longevity and minimal maintenance." %}
-                    </p>
-                </div>
-            </div>
+    <!-- Fixed centered See More button -->
+    <div class="see-more">
+        <div class="capture">
+            {% trans "SEE MORE" %}
+        </div>
+        <div class="arrow">
+            <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
+        </div>
+    </div>
+</div>
 
-            <div class="row align-items-center g-4 mt-5" data-aos="fade-left">
-                <div class="col-lg-7 col-md-6 order-md-1 order-2">
-                    <p class="text-header">{% trans "Expert Installation" %}</p>
-                    <p class="text-text">
-                        {% trans "Our team of experienced professionals ensures that every installation meets the highest standards of quality and safety. We handle the entire process, from initial ground preparation to the final touches, making your dream pool a reality with minimal disruption to your property." %}
-                    </p>
-                </div>
-                <div class="col-lg-5 col-md-6 order-md-2 order-1">
-                    <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Installation">
-                </div>
+<!-- Main Gallery (Grid Layout) -->
+<div class="main-gallery">
+    <div class="container">
+        <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-md-3 col-sm-6">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="{% static 'images/image1_.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+        </div>
+
+        <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-6">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/image1_.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+        </div>
+
+        <div class="row align-items-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-4">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Pool Gallery Image">
             </div>
         </div>
     </div>
+</div>
+
+<!-- Second Gallery (Alternating Text and Images) -->
+<div class="second-gallery">
+    <div class="container">
+        <div class="row align-items-center g-4" data-aos="fade-right">
+            <div class="col-lg-5 col-md-6">
+                <img src="{% static 'images/image0_0.jpg' %}" class="img-fluid" alt="Premium Pool">
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <p class="text-header">{% trans "Premium Stainless Steel Pools" %}</p>
+                <p class="text-text">
+                    {% trans "Our premium stainless steel pools combine durability with elegant design. Each pool is custom-made to meet the specific requirements of our clients, ensuring perfect integration with any landscape or architectural style. The superior quality of stainless steel guarantees longevity and minimal maintenance." %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center g-4 mt-5" data-aos="fade-left">
+            <div class="col-lg-7 col-md-6 order-md-1 order-2">
+                <p class="text-header">{% trans "Expert Installation" %}</p>
+                <p class="text-text">
+                    {% trans "Our team of experienced professionals ensures that every installation meets the highest standards of quality and safety. We handle the entire process, from initial ground preparation to the final touches, making your dream pool a reality with minimal disruption to your property." %}
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-6 order-md-2 order-1">
+                <img src="{% static 'images/image1_0.jpg' %}" class="img-fluid" alt="Pool Installation">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize AOS animations
-            AOS.init({
-                duration: 800,
-                offset: 100,
-                easing: "ease-in-out",
-                delay: 0,
-                once: true
-            });
-
-            // Smooth scroll for See More button
-            const seeMoreBtn = document.querySelector('.see-more');
-            const mainGallery = document.querySelector('.main-gallery');
-
-            if (seeMoreBtn && mainGallery) {
-                seeMoreBtn.addEventListener('click', function () {
-                    mainGallery.scrollIntoView({behavior: 'smooth'});
-                });
-            }
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: "ease-in-out",
+            delay: 0,
+            once: true
         });
-    </script>
+
+        // Smooth scroll for See More button
+        const seeMoreBtn = document.querySelector('.see-more');
+        const mainGallery = document.querySelector('.main-gallery');
+
+        if (seeMoreBtn && mainGallery) {
+            seeMoreBtn.addEventListener('click', function() {
+                mainGallery.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+</script>
 {% endblock %}

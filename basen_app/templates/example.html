@@ -5,46 +5,45 @@
 {% block title %}{% trans "Beyond The Pool - Example" %}{% endblock %}
 
 {% block extra_css %}
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 {% endblock %}
 
 {% block body_class %}example-page{% endblock %}
 
 {% block extra_style %}
-    /* First Screen */
-    .first-screen {
+/* First Screen */
+.first-screen {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image1_.jpg' %}");
     background-size: cover;
     background-position: center;
     color: var(--pure-white);
     position: relative;
-    }
+}
 
-    .first-screen-title {
+.first-screen-title {
     margin-left: auto;
     text-align: right;
-    }
+}
 
-    .first-screen .title {
+.first-screen .title {
     font-size: 5vw;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    }
+}
 
-    .first-screen .subtitle {
+.first-screen .subtitle {
     font-size: 2.5vw;
     font-weight: 400;
     line-height: 1.3;
-    }
+}
 
-    /* See More Button - FIXED CENTERED */
-    .see-more {
+/* See More Button - FIXED CENTERED */
+.see-more {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -54,76 +53,76 @@
     color: var(--pure-white);
     font-weight: 600;
     cursor: pointer;
-    }
+}
 
-    .see-more .capture {
+.see-more .capture {
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    }
+}
 
-    .see-more .arrow img {
+.see-more .arrow img {
     width: 30px;
     filter: invert(1);
     margin: 0 auto;
     display: block;
     animation: bounceArrow 2s infinite;
-    }
+}
 
-    @keyframes bounceArrow {
+@keyframes bounceArrow {
     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-    transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-    transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-    }
+}
 
-    /* 3D Model Container */
-    .model-section {
+/* 3D Model Container */
+.model-section {
     padding: 80px 0;
     background-color: var(--off-white);
-    }
+}
 
-    .model-title {
+.model-title {
     font-family: 'Lora', serif;
     font-weight: 700;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
     color: var(--primary-black);
-    }
+}
 
-    .model-container {
+.model-container {
     max-width: 800px;
     margin: 0 auto;
-    }
+}
 
-    model-viewer {
+model-viewer {
     width: 100%;
     height: 500px;
     background-color: #EFEFEF;
     border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+}
 
-    /* Tabs Section */
-    .tabs-section {
+/* Tabs Section */
+.tabs-section {
     padding: 60px 0;
     background-color: var(--pure-white);
-    }
+}
 
-    .tab-buttons {
+.tab-buttons {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
     border-bottom: 1px solid var(--light-gray);
-    }
+}
 
-    .tab-button {
+.tab-button {
     padding: 15px 30px;
     font-family: 'Lora', serif;
     font-weight: 600;
@@ -134,9 +133,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    }
+}
 
-    .tab-button::after {
+.tab-button::after {
     content: '';
     position: absolute;
     left: 0;
@@ -146,57 +145,57 @@
     background-color: var(--primary-black);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-    }
+}
 
-    .tab-button.active {
+.tab-button.active {
     color: var(--primary-black);
-    }
+}
 
-    .tab-button.active::after {
+.tab-button.active::after {
     transform: scaleX(1);
-    }
+}
 
-    .tab-button:hover {
+.tab-button:hover {
     color: var(--primary-black);
-    }
+}
 
-    .tab-content {
+.tab-content {
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
     max-width: 800px;
     margin: 0 auto;
-    }
+}
 
-    .tab-content.active {
+.tab-content.active {
     display: block;
     opacity: 1;
-    }
+}
 
-    .tab-content img {
+.tab-content img {
     border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 100%;
     height: auto;
-    }
+}
 
-    .description-header {
+.description-header {
     font-family: 'Lora', serif;
     font-weight: 700;
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: var(--primary-black);
-    }
+}
 
-    .description-text {
+.description-text {
     font-family: 'Lora', serif;
     font-weight: 400;
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--secondary-black);
-    }
+}
 
-    .download-button {
+.download-button {
     padding: 12px 30px;
     font-family: 'Lora', serif;
     font-weight: 600;
@@ -210,194 +209,192 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 20px;
-    }
+}
 
-    .download-button:hover {
+.download-button:hover {
     background-color: var(--secondary-black);
     transform: translateY(-2px);
-    }
+}
 
-    /* Responsive Adjustments */
-    @media (max-width: 992px) {
+/* Responsive Adjustments */
+@media (max-width: 992px) {
     .first-screen .title {
-    font-size: 8vw;
+        font-size: 8vw;
     }
 
     .first-screen .subtitle {
-    font-size: 4vw;
+        font-size: 4vw;
     }
 
     .model-title {
-    font-size: 2rem;
+        font-size: 2rem;
     }
 
     .description-header {
-    font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
     .description-text {
-    font-size: 1rem;
+        font-size: 1rem;
     }
-    }
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .tab-buttons {
-    flex-direction: column;
-    align-items: center;
-    border-bottom: none;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: none;
     }
 
     .tab-button {
-    margin: 5px 0;
-    width: 100%;
-    text-align: center;
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
     }
 
     .tab-button::after {
-    bottom: 0;
+        bottom: 0;
     }
 
     .first-screen-title {
-    text-align: center;
-    margin-left: 0;
+        text-align: center;
+        margin-left: 0;
     }
 
     .model-container {
-    padding: 0 20px;
+        padding: 0 20px;
     }
-    }
+}
 {% endblock %}
 
 {% block content %}
-    <!-- First Screen -->
-    <div class="first-screen d-grid">
-        <div class="big-title container col-10 d-flex align-items-center">
-            <div class="first-screen-title col-10">
-                <div class="capture">
-                    <div class="title">
-                        {% trans "Stainless Steel Pool" %}
-                    </div>
-                    <div class="subtitle">
-                        {% trans "Premium quality and modern design" %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fixed centered See More button -->
-        <div class="see-more">
+<!-- First Screen -->
+<div class="first-screen d-grid">
+    <div class="big-title container col-10 d-flex align-items-center">
+        <div class="first-screen-title col-10">
             <div class="capture">
-                {% trans "SEE MORE" %}
-            </div>
-            <div class="arrow">
-                <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
-            </div>
-        </div>
-    </div>
-
-    <!-- 3D Model Section -->
-    <div class="model-section">
-        <div class="container">
-            <h2 class="model-title">{% trans "Explore Our Pool Design" %}</h2>
-            <div class="model-container">
-                <model-viewer
-                        src="{% static 'models/ImageToStl.com_rolling_2b.gltf' %}"
-                        alt="3D model of a pool"
-                        auto-rotate
-                        camera-controls
-                        ar
-                        shadow-intensity="1"
-                        background-color="#EFEFEF">
-                </model-viewer>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tabs Section -->
-    <div class="tabs-section">
-        <div class="container">
-            <div class="tab-buttons">
-                <button class="tab-button" onclick="showTab(0)">{% trans "DIMENSIONS" %}</button>
-                <button class="tab-button" onclick="showTab(1)">{% trans "MATERIAL" %}</button>
-                <button class="tab-button" onclick="showTab(2)">{% trans "MORE" %}</button>
-            </div>
-
-            <div class="tab-content" id="tab-0">
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <img src="{% static 'images/draft-pool.jpg' %}" alt="Pool dimensions" class="img-fluid">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="description-header">{% trans "Pool Dimensions" %}</h3>
-                        <p class="description-text">{% trans "Length-Width-Depth: 960-330-150 (cm)" %}</p>
-                        <p class="description-text">{% trans "Our stainless steel pools are designed with precision to ensure optimal swimming experience while maintaining aesthetic appeal. This model offers ample space for both recreational swimming and exercise." %}</p>
-                    </div>
+                <div class="title">
+                    {% trans "Stainless Steel Pool" %}
                 </div>
-            </div>
-
-            <div class="tab-content" id="tab-1">
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <img src="{% static 'images/stainless-steel.webp' %}" alt="Stainless steel material"
-                             class="img-fluid">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="description-header">{% trans "Stainless Steel" %}</h3>
-                        <p class="description-text">{% trans "AISI 304 (1.4301)" %}</p>
-                        <p class="description-text">{% trans "Wall thickness: 3.5mm" %}<br>{% trans "Bottom thickness: 3mm" %}
-                        </p>
-                        <p class="description-text">{% trans "Our pools are crafted from high-quality stainless steel that offers exceptional durability, resistance to corrosion, and minimal maintenance requirements. The material provides a sleek, modern aesthetic that complements any outdoor space." %}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="tab-2">
-                <div class="text-center">
-                    <h3 class="description-header">{% trans "Documentation" %}</h3>
-                    <p class="description-text">{% trans "Download the complete technical specifications and installation guide for our stainless steel pools. This document includes detailed information on maintenance requirements, warranty terms, and care instructions." %}</p>
-                    <a href="{% static 'pdf/documentation_1.pdf' %}" download="Beyond_The_Pool_Documentation.pdf">
-                        <button class="download-button">{% trans "DOWNLOAD PDF" %}</button>
-                    </a>
+                <div class="subtitle">
+                    {% trans "Premium quality and modern design" %}
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Fixed centered See More button -->
+    <div class="see-more">
+        <div class="capture">
+            {% trans "SEE MORE" %}
+        </div>
+        <div class="arrow">
+            <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
+        </div>
+    </div>
+</div>
+
+<!-- 3D Model Section -->
+<div class="model-section">
+    <div class="container">
+        <h2 class="model-title">{% trans "Explore Our Pool Design" %}</h2>
+        <div class="model-container">
+            <model-viewer
+                src="{% static 'models/ImageToStl.com_rolling_2b.gltf' %}"
+                alt="3D model of a pool"
+                auto-rotate
+                camera-controls
+                ar
+                shadow-intensity="1"
+                background-color="#EFEFEF">
+            </model-viewer>
+        </div>
+    </div>
+</div>
+
+<!-- Tabs Section -->
+<div class="tabs-section">
+    <div class="container">
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="showTab(0)">{% trans "DIMENSIONS" %}</button>
+            <button class="tab-button" onclick="showTab(1)">{% trans "MATERIAL" %}</button>
+            <button class="tab-button" onclick="showTab(2)">{% trans "MORE" %}</button>
+        </div>
+
+        <div class="tab-content" id="tab-0">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="{% static 'images/draft-pool.jpg' %}" alt="Pool dimensions" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="description-header">{% trans "Pool Dimensions" %}</h3>
+                    <p class="description-text">{% trans "Length-Width-Depth: 960-330-150 (cm)" %}</p>
+                    <p class="description-text">{% trans "Our stainless steel pools are designed with precision to ensure optimal swimming experience while maintaining aesthetic appeal. This model offers ample space for both recreational swimming and exercise." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-1">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="{% static 'images/stainless-steel.webp' %}" alt="Stainless steel material" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="description-header">{% trans "Stainless Steel" %}</h3>
+                    <p class="description-text">{% trans "AISI 304 (1.4301)" %}</p>
+                    <p class="description-text">{% trans "Wall thickness: 3.5mm" %}<br>{% trans "Bottom thickness: 3mm" %}</p>
+                    <p class="description-text">{% trans "Our pools are crafted from high-quality stainless steel that offers exceptional durability, resistance to corrosion, and minimal maintenance requirements. The material provides a sleek, modern aesthetic that complements any outdoor space." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-2">
+            <div class="text-center">
+                <h3 class="description-header">{% trans "Documentation" %}</h3>
+                <p class="description-text">{% trans "Download the complete technical specifications and installation guide for our stainless steel pools. This document includes detailed information on maintenance requirements, warranty terms, and care instructions." %}</p>
+                <a href="{% static 'pdf/documentation_1.pdf' %}" download="Beyond_The_Pool_Documentation.pdf">
+                    <button class="download-button">{% trans "DOWNLOAD PDF" %}</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize first tab
-            showTab(0);
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize first tab
+        showTab(0);
 
-            // Smooth scroll for See More button
-            const seeMoreBtn = document.querySelector('.see-more');
-            const modelSection = document.querySelector('.model-section');
+        // Smooth scroll for See More button
+        const seeMoreBtn = document.querySelector('.see-more');
+        const modelSection = document.querySelector('.model-section');
 
-            if (seeMoreBtn && modelSection) {
-                seeMoreBtn.addEventListener('click', function () {
-                    modelSection.scrollIntoView({behavior: 'smooth'});
-                });
-            }
+        if (seeMoreBtn && modelSection) {
+            seeMoreBtn.addEventListener('click', function() {
+                modelSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+
+    function showTab(index) {
+        // Get all tab content elements and buttons
+        const tabs = document.querySelectorAll('.tab-content');
+        const buttons = document.querySelectorAll('.tab-button');
+
+        // Hide all tabs and deactivate all buttons
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
         });
 
-        function showTab(index) {
-            // Get all tab content elements and buttons
-            const tabs = document.querySelectorAll('.tab-content');
-            const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
 
-            // Hide all tabs and deactivate all buttons
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Show selected tab and activate corresponding button
-            tabs[index].classList.add('active');
-            buttons[index].classList.add('active');
-        }
-    </script>
+        // Show selected tab and activate corresponding button
+        tabs[index].classList.add('active');
+        buttons[index].classList.add('active');
+    }
+</script>
 {% endblock %}

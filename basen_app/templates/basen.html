@@ -4,48 +4,46 @@
 {% block title %}Beyond The Pool - Rodzaje Basenów{% endblock %}
 
 {% block extra_css %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block body_class %}pool-page{% endblock %}
 
 {% block extra_style %}
-    /* First Screen */
-    .first-screen {
+/* First Screen */
+.first-screen {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}
-    ");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}");
     background-size: cover;
     background-position: center;
     color: var(--pure-white);
     position: relative;
-    }
+}
 
-    .first-screen-title {
+.first-screen-title {
     margin-left: auto;
     text-align: right;
-    }
+}
 
-    .first-screen .title {
+.first-screen .title {
     font-size: 5vw;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    }
+}
 
-    .first-screen .subtitle {
+.first-screen .subtitle {
     font-size: 2.5vw;
     font-weight: 400;
     line-height: 1.3;
-    }
+}
 
-    /* See More Button - FIXED CENTERED */
-    .see-more {
+/* See More Button - FIXED CENTERED */
+.see-more {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -55,46 +53,46 @@
     color: var(--pure-white);
     font-weight: 600;
     cursor: pointer;
-    }
+}
 
-    .see-more .capture {
+.see-more .capture {
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    }
+}
 
-    .see-more .arrow img {
+.see-more .arrow img {
     width: 30px;
     filter: invert(1);
     margin: 0 auto;
     display: block;
     animation: bounceArrow 2s infinite;
-    }
+}
 
-    @keyframes bounceArrow {
+@keyframes bounceArrow {
     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-    transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-    transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-    }
+}
 
-    /* Second Screen */
-    .second-screen {
+/* Second Screen */
+.second-screen {
     padding: 100px 0;
     background-color: var(--off-white);
-    }
+}
 
-    .circle-item {
+.circle-item {
     text-align: center;
     margin-bottom: 40px;
-    }
+}
 
-    .circle {
+.circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -105,53 +103,53 @@
     margin: 0 auto 20px;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+}
 
-    .circle img {
+.circle img {
     width: 60px;
     height: 60px;
     filter: invert(1);
-    }
+}
 
-    .nums {
+.nums {
     font-size: 3rem;
     font-weight: 700;
     color: white;
-    }
+}
 
-    .circle-capture {
+.circle-capture {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
     color: var(--primary-black);
     max-width: 200px;
     margin: 0 auto;
-    }
+}
 
-    /* Third Screen */
-    .third-screen {
+/* Third Screen */
+.third-screen {
     padding: 100px 0;
     background-color: var(--pure-white);
-    }
+}
 
-    .third-screen-inner-title {
+.third-screen-inner-title {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 50px;
     color: var(--primary-black);
-    }
+}
 
-    /* Fixed Carousel */
-    .carousel {
+/* Fixed Carousel */
+.carousel {
     margin-bottom: 30px;
-    }
+}
 
-    .carousel-indicators {
+.carousel-indicators {
     bottom: -40px;
-    }
+}
 
-    .carousel-indicators li, .carousel-indicators [data-bs-target] {
+.carousel-indicators li, .carousel-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -159,15 +157,15 @@
     margin: 0 5px;
     border: none;
     opacity: 0.5;
-    }
+}
 
-    .carousel-indicators .active {
+.carousel-indicators .active {
     background-color: var(--primary-black);
     opacity: 1;
-    }
+}
 
-    .carousel-control-prev,
-    .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     width: 40px;
     height: 40px;
     background: var(--primary-black);
@@ -175,88 +173,88 @@
     top: 50%;
     transform: translateY(-50%);
     opacity: 0.8;
-    }
+}
 
-    .carousel-control-prev {
+.carousel-control-prev {
     left: 10px;
-    }
+}
 
-    .carousel-control-next {
+.carousel-control-next {
     right: 10px;
-    }
+}
 
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
     opacity: 1;
-    }
+}
 
-    .image-capture {
+.image-capture {
     text-align: center;
     margin-top: 20px;
-    }
+}
 
-    .title-capt {
+.title-capt {
     font-weight: 700;
     font-size: 1.5rem;
     margin-bottom: 5px;
-    }
+}
 
-    .subtitle-capt {
+.subtitle-capt {
     font-size: 1rem;
     color: var(--medium-gray);
-    }
+}
 
-    /* Fourth Screen */
-    .fourth-screen {
+/* Fourth Screen */
+.fourth-screen {
     height: 100vh;
     overflow: hidden;
-    }
+}
 
-    .fourth-screen .carousel-item {
+.fourth-screen .carousel-item {
     height: 100vh;
-    }
+}
 
-    .fourth-screen img {
+.fourth-screen img {
     height: 100vh;
     width: 100%;
     object-fit: cover;
     object-position: center;
-    }
+}
 
-    .carousel-item-inner {
+.carousel-item-inner {
     position: relative;
-    }
+}
 
-    .big-title {
+.big-title {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
-    }
+}
 
-    .fourth-screen-title {
+.fourth-screen-title {
     margin-left: auto;
     text-align: right;
     padding-top: 100px;
-    }
+}
 
-    .fourth-screen .title {
+.fourth-screen .title {
     font-size: 5vw;
     font-weight: 700;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+}
 
-    .fourth-screen .subtitle {
+.fourth-screen .subtitle {
     font-size: 2.5vw;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+}
 
-    /* Popup */
-    .popup {
+/* Popup */
+.popup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -272,25 +270,25 @@
     width: 400px;
     z-index: 20;
     text-align: center;
-    }
+}
 
-    .popup.show {
+.popup.show {
     opacity: 1;
     visibility: visible;
-    }
+}
 
-    .popup h3 {
+.popup h3 {
     color: var(--primary-black);
     margin-bottom: 15px;
     font-weight: 700;
-    }
+}
 
-    .popup p {
+.popup p {
     color: var(--secondary-black);
     margin-bottom: 20px;
-    }
+}
 
-    .popup .btn {
+.popup .btn {
     background-color: var(--primary-black);
     color: white;
     border: none;
@@ -299,401 +297,401 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    }
+}
 
-    .popup .btn:hover {
+.popup .btn:hover {
     background-color: var(--secondary-black);
     transform: translateY(-3px);
-    }
+}
 
-    /* Responsive Adjustments */
-    @media (max-width: 992px) {
+/* Responsive Adjustments */
+@media (max-width: 992px) {
     .first-screen .title, .fourth-screen .title {
-    font-size: 8vw;
+        font-size: 8vw;
     }
 
     .first-screen .subtitle, .fourth-screen .subtitle {
-    font-size: 4vw;
+        font-size: 4vw;
     }
 
     .circle {
-    width: 120px;
-    height: 120px;
+        width: 120px;
+        height: 120px;
     }
 
     .nums {
-    font-size: 2.5rem;
+        font-size: 2.5rem;
     }
-    }
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .socials {
-    text-align: center;
-    margin-top: 30px;
+        text-align: center;
+        margin-top: 30px;
     }
 
     .social {
-    justify-content: center;
+        justify-content: center;
     }
 
     .first-screen-title, .fourth-screen-title {
-    text-align: center;
-    margin-left: 0;
+        text-align: center;
+        margin-left: 0;
     }
 
     .circle-item {
-    margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-    }
+}
 
-    .alert {
+.alert {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--pure-white);
     border: none;
     border-radius: 0;
     margin-top: 15px;
-    }
+}
 
-    .alert-success {
+.alert-success {
     border-left: 3px solid #28a745;
-    }
+}
 
-    .alert-danger {
+.alert-danger {
     border-left: 3px solid #dc3545;
-    }
+}
 {% endblock %}
 
 {% block content %}
-    <!-- First Screen -->
-    <div class="first-screen d-grid">
-        <div class="big-title container col-10 d-flex align-items-center">
-            <div class="first-screen-title col-10">
-                <div class="capture">
-                    <div class="title">
-                        Beyond the pool
-                    </div>
-                    <div class="subtitle">
-                        Pokażemy ci, jak wygląda to, co tworzymy
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fixed centered See More button -->
-        <div class="see-more">
+<!-- First Screen -->
+<div class="first-screen d-grid">
+    <div class="big-title container col-10 d-flex align-items-center">
+        <div class="first-screen-title col-10">
             <div class="capture">
-                ZOBACZ WIĘCEJ
-            </div>
-            <div class="arrow">
-                <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
-            </div>
-        </div>
-    </div>
-
-    <!-- Second Screen -->
-    <div class="second-screen">
-        <div class="second-screen-inner">
-            <div class="content">
-                <div class="circles container row justify-content-center mx-auto">
-                    <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
-                        <div class="circle">
-                            <img src="{% static 'images/mdi_like.svg' %}" alt="">
-                        </div>
-                        <div class="circle-capture">
-                            GARANTUJEMY JAKOŚĆ
-                        </div>
-                    </div>
-                    <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
-                        <div class="circle">
-                            <img src="{% static 'images/game-icons_podium-winner.svg' %}" alt="">
-                        </div>
-                        <div class="circle-capture">
-                            JESTEŚMY NAJLEPSI W SWOIM REGIONIE
-                        </div>
-                    </div>
-                    <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
-                        <div class="circle">
-                            <div class="nums" id="to_100">
-                                0
-                            </div>
-                        </div>
-                        <div class="circle-capture">
-                            ZREALIZOWANYCH ZLECEŃ
-                        </div>
-                    </div>
-                    <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
-                        <div class="circle">
-                            <div class="nums" id="to_5">
-                                0
-                            </div>
-                        </div>
-                        <div class="circle-capture">
-                            LAT W TEJ SPRAWIE
-                        </div>
-                    </div>
+                <div class="title">
+                    Beyond the pool
+                </div>
+                <div class="subtitle">
+                    Pokażemy ci, jak wygląda to, co tworzymy
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Third Screen -->
-    <div class="third-screen">
-        <div class="third-screen-inner">
-            <div class="third-screen-inner-title lora">PRZEŻYJ TEN PROCES Z NAMI</div>
-            <div class="third-screen-inner-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
-                            <!-- Carousel -->
-                            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
-                                            aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
-                                            aria-label="Slide 3"></button>
-                                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"
-                                            aria-label="Slide 4"></button>
-                                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"
-                                            aria-label="Slide 5"></button>
-                                </div>
+    <!-- Fixed centered See More button -->
+    <div class="see-more">
+        <div class="capture">
+            ZOBACZ WIĘCEJ
+        </div>
+        <div class="arrow">
+            <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
+        </div>
+    </div>
+</div>
 
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="{% static 'images/proces1.png' %}" class="img-fluid" alt="">
-                                        <div class="image-capture lora">
-                                            <div class="title-capt">Etap 1</div>
-                                            <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/proces2.png' %}" class="img-fluid" alt="">
-                                        <div class="image-capture lora">
-                                            <div class="title-capt">Etap 1</div>
-                                            <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/proces3.png' %}" class="img-fluid" alt="">
-                                        <div class="image-capture lora">
-                                            <div class="title-capt">Etap 1</div>
-                                            <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/proces1.png' %}" class="img-fluid" alt="">
-                                        <div class="image-capture lora">
-                                            <div class="title-capt">Etap 1</div>
-                                            <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/proces2.png' %}" class="img-fluid" alt="">
-                                        <div class="image-capture lora">
-                                            <div class="title-capt">Etap 1</div>
-                                            <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
-                                        </div>
+<!-- Second Screen -->
+<div class="second-screen">
+    <div class="second-screen-inner">
+        <div class="content">
+            <div class="circles container row justify-content-center mx-auto">
+                <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
+                    <div class="circle">
+                        <img src="{% static 'images/mdi_like.svg' %}" alt="">
+                    </div>
+                    <div class="circle-capture">
+                        GARANTUJEMY JAKOŚĆ
+                    </div>
+                </div>
+                <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
+                    <div class="circle">
+                        <img src="{% static 'images/game-icons_podium-winner.svg' %}" alt="">
+                    </div>
+                    <div class="circle-capture">
+                        JESTEŚMY NAJLEPSI W SWOIM REGIONIE
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
+                    <div class="circle">
+                        <div class="nums" id="to_100">
+                            0
+                        </div>
+                    </div>
+                    <div class="circle-capture">
+                        ZREALIZOWANYCH ZLECEŃ
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
+                    <div class="circle">
+                        <div class="nums" id="to_5">
+                            0
+                        </div>
+                    </div>
+                    <div class="circle-capture">
+                        LAT W TEJ SPRAWIE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Third Screen -->
+<div class="third-screen">
+    <div class="third-screen-inner">
+        <div class="third-screen-inner-title lora">PRZEŻYJ TEN PROCES Z NAMI</div>
+        <div class="third-screen-inner-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <!-- Carousel -->
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"
+                                        aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"
+                                        aria-label="Slide 5"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{% static 'images/proces1.png' %}" class="img-fluid" alt="">
+                                    <div class="image-capture lora">
+                                        <div class="title-capt">Etap 1</div>
+                                        <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
                                     </div>
                                 </div>
-                                <!-- Carousel controls -->
-                                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
-                                        data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
-                                        data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/proces2.png' %}" class="img-fluid" alt="">
+                                    <div class="image-capture lora">
+                                        <div class="title-capt">Etap 1</div>
+                                        <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/proces3.png' %}" class="img-fluid" alt="">
+                                    <div class="image-capture lora">
+                                        <div class="title-capt">Etap 1</div>
+                                        <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/proces1.png' %}" class="img-fluid" alt="">
+                                    <div class="image-capture lora">
+                                        <div class="title-capt">Etap 1</div>
+                                        <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/proces2.png' %}" class="img-fluid" alt="">
+                                    <div class="image-capture lora">
+                                        <div class="title-capt">Etap 1</div>
+                                        <div class="subtitle-capt">Coś robimy, coś bierzemy</div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- Carousel controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Fourth Screen -->
-    <div class="fourth-screen pt-1">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="carousel-item-inner">
-                        <div class="big-title container col-10 d-flex align-items-center">
-                            <div class="fourth-screen-title col-10">
-                                <div class="capture">
-                                    <div class="title">
-                                        Beyond the pool
-                                    </div>
-                                    <div class="subtitle">
-                                        Baseny, które przekraczają oczekiwania
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
-
-                        <!-- Pop-up -->
-                        <div class="popup">
-                            <div class="popup-content">
-                                <h3>Dowiedż się więcej</h3>
-                                <p>Mamy najlepszy wybór basenów ze stali nierdzewnej. Przeprowadzamy cały proces od
-                                    projektowania, do instalacji gotowego produktu w dowolnej miejscowości.</p>
-                                <button class="btn btn-primary">Więcej</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-item-inner">
-                        <div class="big-title container col-11 d-flex align-items-center">
-                            <div class="fourth-screen-title col-10">
-                                <div class="capture">
-                                    <div class="title">
-                                        Beyond the pool
-                                    </div>
-                                    <div class="subtitle">
-                                        Najlepszy twój wybór spośród innych wariantów
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'images/image1_.jpg' %}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-item-inner">
-                        <div class="big-title container col-10 d-flex align-items-center">
-                            <div class="fourth-screen-title col-10">
-                                <div class="capture">
-                                    <div class="title">
-                                        Beyond the pool
-                                    </div>
-                                    <div class="subtitle">
-                                        Garantujemy jakość i elegancki wygląd
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'images/image1_0.jpg' %}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+<!-- Fourth Screen -->
+<div class="fourth-screen pt-1">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-item-inner">
+                    <div class="big-title container col-10 d-flex align-items-center">
+                        <div class="fourth-screen-title col-10">
+                            <div class="capture">
+                                <div class="title">
+                                    Beyond the pool
+                                </div>
+                                <div class="subtitle">
+                                    Baseny, które przekraczają oczekiwania
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
+
+                    <!-- Pop-up -->
+                    <div class="popup">
+                        <div class="popup-content">
+                            <h3>Dowiedż się więcej</h3>
+                            <p>Mamy najlepszy wybór basenów ze stali nierdzewnej. Przeprowadzamy cały proces od
+                                projektowania, do instalacji gotowego produktu w dowolnej miejscowości.</p>
+                            <button class="btn btn-primary">Więcej</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item-inner">
+                    <div class="big-title container col-11 d-flex align-items-center">
+                        <div class="fourth-screen-title col-10">
+                            <div class="capture">
+                                <div class="title">
+                                    Beyond the pool
+                                </div>
+                                <div class="subtitle">
+                                    Najlepszy twój wybór spośród innych wariantów
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{% static 'images/image1_.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-item-inner">
+                    <div class="big-title container col-10 d-flex align-items-center">
+                        <div class="fourth-screen-title col-10">
+                            <div class="capture">
+                                <div class="title">
+                                    Beyond the pool
+                                </div>
+                                <div class="subtitle">
+                                    Garantujemy jakość i elegancki wygląd
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{% static 'images/image1_0.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        document.addEventListener('DOMContentLoaded', function () {
-            AOS.init({
-                duration: 800,
-                offset: 100,
-                easing: "ease-in-out",
-                delay: 0,
-                once: true,
-            });
-
-            // Count animations
-            const countersSection = document.getElementById('to_100');
-            const observer = new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            startCounting();
-                            observer.unobserve(countersSection);
-                        }
-                    });
-                },
-                {threshold: 0.8}
-            );
-            if (countersSection) {
-                observer.observe(countersSection);
-            }
-
-            // Popup
-            setTimeout(() => {
-                const fourthScreenTitle = document.querySelector('.fourth-screen-title');
-                const popup = document.querySelector('.popup');
-
-                if (fourthScreenTitle) {
-                    fourthScreenTitle.style.display = 'none';
-                }
-
-                if (popup) {
-                    popup.classList.add('show');
-                }
-            }, 3000);
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: "ease-in-out",
+            delay: 0,
+            once: true,
         });
 
-        // Counting functions
-        function countToHundred() {
-            const counter = document.getElementById('to_100');
-            if (!counter) return;
-
-            const duration = 2000;
-            const targetNumber = 100;
-            const interval = 10;
-
-            let currentNumber = 0;
-            const increment = targetNumber / (duration / interval);
-
-            const intervalId = setInterval(() => {
-                currentNumber += increment;
-                if (currentNumber >= targetNumber) {
-                    currentNumber = targetNumber;
-                    clearInterval(intervalId);
-                }
-                counter.textContent = Math.floor(currentNumber);
-            }, interval);
+        // Count animations
+        const countersSection = document.getElementById('to_100');
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounting();
+                        observer.unobserve(countersSection);
+                    }
+                });
+            },
+            {threshold: 0.8}
+        );
+        if (countersSection) {
+            observer.observe(countersSection);
         }
 
-        function countToFive() {
-            const counter_5 = document.getElementById('to_5');
-            if (!counter_5) return;
+        // Popup
+        setTimeout(() => {
+            const fourthScreenTitle = document.querySelector('.fourth-screen-title');
+            const popup = document.querySelector('.popup');
 
-            const duration_5 = 2000;
-            const targetNumber_5 = 5;
-            const interval_5 = 10;
+            if (fourthScreenTitle) {
+                fourthScreenTitle.style.display = 'none';
+            }
 
-            let currentNumber_5 = 0;
-            const increment_5 = targetNumber_5 / (duration_5 / interval_5);
+            if (popup) {
+                popup.classList.add('show');
+            }
+        }, 3000);
+    });
 
-            const intervalId_5 = setInterval(() => {
-                currentNumber_5 += increment_5;
-                if (currentNumber_5 >= targetNumber_5) {
-                    currentNumber_5 = targetNumber_5;
-                    clearInterval(intervalId_5);
-                }
-                counter_5.textContent = Math.floor(currentNumber_5);
-            }, interval_5);
-        }
+    // Counting functions
+    function countToHundred() {
+        const counter = document.getElementById('to_100');
+        if (!counter) return;
 
-        function startCounting() {
-            countToHundred();
-            countToFive();
-        }
-    </script>
+        const duration = 2000;
+        const targetNumber = 100;
+        const interval = 10;
+
+        let currentNumber = 0;
+        const increment = targetNumber / (duration / interval);
+
+        const intervalId = setInterval(() => {
+            currentNumber += increment;
+            if (currentNumber >= targetNumber) {
+                currentNumber = targetNumber;
+                clearInterval(intervalId);
+            }
+            counter.textContent = Math.floor(currentNumber);
+        }, interval);
+    }
+
+    function countToFive() {
+        const counter_5 = document.getElementById('to_5');
+        if (!counter_5) return;
+
+        const duration_5 = 2000;
+        const targetNumber_5 = 5;
+        const interval_5 = 10;
+
+        let currentNumber_5 = 0;
+        const increment_5 = targetNumber_5 / (duration_5 / interval_5);
+
+        const intervalId_5 = setInterval(() => {
+            currentNumber_5 += increment_5;
+            if (currentNumber_5 >= targetNumber_5) {
+                currentNumber_5 = targetNumber_5;
+                clearInterval(intervalId_5);
+            }
+            counter_5.textContent = Math.floor(currentNumber_5);
+        }, interval_5);
+    }
+
+    function startCounting() {
+        countToHundred();
+        countToFive();
+    }
+</script>
 {% endblock %}
