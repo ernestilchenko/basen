@@ -17,6 +17,13 @@ html {
     div.second-screen-content-circles-circle-capture{
         color: #ffffff;
     }
+    h1.company-name{
+        color:#c2d9df;
+    }
+    div.row.label-value{
+        background: #000;
+        color: #8f9da1;
+    }
     } 
 }
 

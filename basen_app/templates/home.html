@@ -54,19 +54,25 @@
                 <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link lora">KONTAKT</a></li>
                 
                 <!-- Dropdown for USTAWIENIA -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link lora dropdown-toggle" href="#" id="ustawieniaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        USTAWIENIA
-                    </a>
-                    <ul class="dropdown-menu lora" aria-labelledby="ustawieniaDropdown">
-                        <li class="d-flex"><button class="btn color change-color btp-primary mx-auto">DARK</button></li>
-                        <li class="d-flex"><select class="mx-auto" name="lang" id="">
-                            <option value="polish">polish</option>
-                            <option value="english">english</option>
-                        </select></li>
-                        
-                    </ul>
+                <li class="nav-item px-2 pb-1 color change-color">
+                    
                 </li>
+                <li class="nav-item px-2">
+                    <select class="langs" name="" id="" style="color: #8f9da1; border: none;">
+                        <option value="polish">
+                            <button class="mx-auto button-lang selected">
+                                PL
+                            </button>
+                        </option>
+                        <option value="english">
+                            <button class="mx-auto button-lang">
+                                EN
+                            </button>
+                        </option>
+                    </select>
+                    
+                </li>
+
             </ul>
         </div>
     </header>

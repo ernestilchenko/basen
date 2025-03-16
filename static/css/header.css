@@ -37,14 +37,19 @@ ul.nav{
     }
 } 
 
-ul.dropdown-menu{
-    li{
-        margin-top: 5px;
-        padding: 0 10px;
-    }
+select.langs{
+    border: 1px solid #8f9da1;
+    border-radius: 5px;
+   
+
+}
+select:focus{
+    border:1px solid #8f9da1;
 }
 
-button.change-color{
+
+
+svg.change-color{
     border: 1px solid #50585A;
     color: #50585A;
     border-radius: 3px;
@@ -134,6 +139,11 @@ button.selected{
             button.selected{
                 background: #52595b;
                 color: white;
+            }
+
+            select.langs{
+                background: #000;
+                transition: .4;
             }
         }
     }
