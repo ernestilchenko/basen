@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-dcwl_%!2a!bu#rr)2k@27qdeqow@$2=4oqf-_tz$36n*+7a$zt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'basen-production.up.railway.app']
 # Application definition
 
 INSTALLED_APPS = [
