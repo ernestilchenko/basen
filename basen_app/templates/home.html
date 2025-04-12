@@ -1,459 +1,512 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto|Open+Sans:300,400,700">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{% load i18n %}
 
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+{% block title %}{% trans "Beyond The Pool - Premium Pools" %}{% endblock %}
 
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+    /* First screen styles */
+    .hero-section {
+        height: 100vh;
+        background-image: url("{% static 'images/image0_0.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'scss/style.scss' %}">
-    <title>Diamant - Minipools</title>
-    <title>Ultimate</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    }
 
-div.fourth-screen{
-            height: 100vh;
-          
-            div.carousel.slide{
-                height: calc(100vh - 5px);
-                
-                div.carousel-inner{
-                    width: 100%;
-                    
-                    div.carousel-item{
-                        div.carousel-item-inner{
-                            div.big-title{
-                                position: absolute;
-                                div.first-screen-title{
-                                    margin-left: auto;
-                                    text-align: right;
-                                    font-size: 5vw;
-                                    word-wrap: break-word;
-                                    color: white;
-                                    div.capture{
-                                        padding-top: 70px;
-                                        display: block;
-                                        height: auto;
-                                        line-height:12vh;
-                                        /* border: 5px solid transparent;  
-                                        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
-                                        background: rgba(66, 79, 101, 0.3); */
-                                        div.title{
-                                            font-weight: 700;
-                                            z-index: 1;
-                                        }
-                                        div.subtitle{
-                                            position: relative;
-                                            top: -20px;
-                                            font-weight: 400;
-                                            z-index: 1; 
-                                        }
-                                    }    
-                                }
-                            }
-                            img{
-                               
-                                height: calc(100vh - 5px);
-                                width: 100%;
-                                object-fit: cover; /* Ensure the image covers the space */
-                                object-position: center;
-                            }
-                        }
-                        
-                      
-                    }
-                    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
 
-                }
-            }
+    .hero-title {
+        font-size: 5vw;
+        font-weight: 700;
+        color: var(--pure-white);
+        line-height: 1.2;
+        text-align: right;
+    }
 
+    .hero-subtitle {
+        font-size: 2.5vw;
+        font-weight: 400;
+        color: var(--pure-white);
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .see-more {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: var(--pure-white);
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .see-more:hover {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    .see-more .capture {
+        font-weight: 500;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .moving-image {
+        animation: bounce 2s infinite;
+        transform: rotate(90deg);
+        filter: brightness(0) invert(1);
+        width: 20px;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: rotate(90deg) translateY(0);
         }
-        
-    </style>
-</head>
-<body class="start">
-    <!-- <div class="header">
-        <header class="header row col-12 align-items-center">
-            <a href="{% url 'home' %}" class="col-5 align-items-center">
-                <div class="centre">
-                    <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                    <text class="logo lora">Beyond The Pool</text>
-                </div>
-            </a>
-            <nav class="nav-menu col-7 align-items-center">
-                <a href="{% url 'basen' %}" class="nav-link lora">RODZAJE BASENÓW</a>
-                <a href="#" class="nav-link lora">GALERIA</a>
-                <a href="#" class="nav-link lora">SERWIS</a>
-                <a href="#" class="nav-link lora">O FIRMIE</a>
-                <a href="#" class="nav-link lora">KONTAKT</a>
-                <a href="#" class="nav-link lora">USTAWIENIA</a>
-            </nav>
-        </header>
-    </div> -->
+        40% {
+            transform: rotate(90deg) translateY(-10px);
+        }
+        60% {
+            transform: rotate(90deg) translateY(-5px);
+        }
+    }
 
+    /* Features section */
+    .features-section {
+        padding: 80px 0;
+        background-color: var(--off-white);
+    }
 
+    .circle-item {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
-    <header class="header sticky-top flex-wrap justify-content-center">
-        <div class="container col-10 d-flex">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                <text class="logo lora">Beyond The Pool</text>
-            </a>
-    
-            <ul class="nav d-flex align-items-center">
-                <li class="nav-item"><a href="basen/" class="nav-link lora">RODZAJE BASENÓW</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">GALERIA</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">PRZYKŁAD</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">O FIRMIE</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link lora">KONTAKT</a></li>
-                
-                <!-- Dropdown for USTAWIENIA -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link lora dropdown-toggle" href="#" id="ustawieniaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        USTAWIENIA
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="ustawieniaDropdown">
-                        <li><button class="btn color btp-primary">DARK</button></li>
-                        <li><a class="dropdown-item" href="#"><select name="lang" id="">
-                            <option value="english">english</option>
-                            <option value="polish">polish</option>
-                        </select></a></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    
-    <main>
-        <div class="first-screen d-grid">
-            <div class="big-title container col-10 d-flex align-items-center">
-                <div class="first-screen-title   col-10 ">
-                    <div class="capture">
-                        <div class="title">
-                            Beyond the pool
-                        </div>
-                        <div class="subtitle">
-                            Baseny, które przekraczają oczekiwania
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="see-more">
-                <div class="capture">
-                    ZOBACZ WIĘCEJ
-                </div>
-                <div class="arrow d-block ">
-                    <img src="{% static 'images/weui_arrow-filled.svg'%}" alt="" class="moving-image">
-                </div>
-            </div>
+    .circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: var(--pure-white);
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        </div>
+    .circle img {
+        width: 50px;
+        height: 50px;
+    }
 
+    .nums {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
 
-        <div class="second-screen">
-            <div class="second-screen-inner">
-                <div class="content">
-                    <div  class="circles container col-10">
-                        <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
-                                <img src="{%static 'images/mdi_like.svg'%}" alt="">
-                            </div>
-                            <div class="circle-capture">
-                                GARANTUJEMY JAKOŚĆ
-                            </div>
-                        </div>
-                        <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
-                                <img src="{%static 'images/game-icons_podium-winner.svg'%}" alt="">
-                            </div>
-                            <div class="circle-capture">
-                                JESTEŚMY NAJLEPSI W SWOIM REGIONIE
-                            </div>
-                        </div>
-                        <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
-                                <div class="nums" id="to_100">
-                                    0
-                                </div>
-                            </div>
-                            <div class="circle-capture">
-                                ZREALIZOWANYCH ZLECEŃ
-                            </div>
-                        </div>
-                        <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
-                                <div class="nums" id="to_5">
-                                    0
-                                </div>                            
-                            </div>
-                            <div class="circle-capture">
-                                LAT W TEJ SPRAWIE 
-                            </div>
-                        </div>
-    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="third-screen d-flex align-items-center">
-            <div class="third-screen-inner col-12 d-block align-items-center">
-                <div class="third-screen-inner-title  align-items-center lora ">PRZEŻYJ TEN PROCES Z NAMI</div>
-                <div class="third-screen-inner-content">
-                    <div class="third-screen-inner-line  col-12 ">
-                        <div class="container-sm col-10">
-                            <div class="row">
-                                <div class="col-md-8 mx-auto">
-                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                                            <li data-target="#myCarousel" data-slide-to="4"></li>
-                                        </ol>   
-                                        
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{%static 'images/proces1.png'%}" class="img-fluid" alt="">
-                                                <div class="image-capture lora"><div class="title-capt">Etap 1</div><div class="subtitle-capt">Coś robimy, coś bierzemy</div></div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{%static 'images/proces2.png'%}" class="img-fluid" alt="">
-                                                <div class="image-capture lora"><div class="title-capt">Etap 1</div><div class="subtitle-capt">Coś robimy, coś bierzemy</div></div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{%static 'images/proces3.png'%}" class="img-fluid" alt="">
-                                                <div class="image-capture lora"><div class="title-capt">Etap 1</div><div class="subtitle-capt">Coś robimy, coś bierzemy</div></div>
-                                            </div>	
-                                            <div class="carousel-item">
-                                                <img src="{%static 'images/proces1.png'%}" class="img-fluid" alt="">
-                                                <div class="image-capture lora"><div class="title-capt">Etap 1</div><div class="subtitle-capt">Coś robimy, coś bierzemy</div></div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="{%static 'images/proces2.png'%}" class="img-fluid" alt="">
-                                                <div class="image-capture lora"><div class="title-capt">Etap 1</div><div class="subtitle-capt">Coś robimy, coś bierzemy</div></div>
-                                            </div>					
-                                        </div>
-                                        <!-- Carousel controls -->
-                                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                            <span><i class="fa fa-angle-left"></i></span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                                            <span><i class="fa fa-angle-right"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="fourth-screen pt-1 ">
-            <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner w-100">
-                    <div class="carousel-item item_1 active">
-                        <div class="carousel-item-inner d-flex align-items-center">
-                            <div class="big-title container col-10 d-flex align-self-center align-items-center m-auto">
-                                <div class="fourth-screen-title col-10">
-                                    <div class="capture">
-                                        <div class="title">
-                                            Beyond the pool
-                                        </div>
-                                        <div class="subtitle">
-                                            Baseny, które przekraczają oczekiwania
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
-                    
-                            <!-- Pop-up -->
-                            <div class="popup">
-                                <div class="popup-content">
-                                    <h3 lora>Dowiedż się więcej</h3>
-                                    <p lora>Mamy najlepszy wybór basenów ze stali nierdzewnej. Przeprowadzamy cały proces od projektowania, do instalacji gotowego produktu w dowolnej miejscowości.</p>
-                                    <a href="basen/"><button class="btn btn-primary">Więcej</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  <div class="carousel-item item_2 ">
-                    <div class="carousel-item-inner d-flex align-items-center">
-                        <div class="big-title container col-11 d-flex align-self-center align-items-center mx-auto ">
-                            <div class="fourth-screen-title    col-10 ">
-                                <div class="capture ">
-                                    <div class="title">
-                                        Beyond the pool
-                                    </div>
-                                    <div class="subtitle">
-                                        Najlepszy twój wybór spośród innych wariantów
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'images/image1_.jpg'%}" class="d-block  w-100  " alt="..."> 
-                    </div>
-                    
-                  </div>
-                  <div class="carousel-item item_3 ">
-                    <div class="carousel-item-inner d-flex align-items-center">
-                        <div class="big-title container col-10 d-flex align-self-center align-items-center m-auto ">
-                            <div class="fourth-screen-title   col-10 ">
-                                <div class="capture">
-                                    <div class="title">
-                                        Beyond the pool
-                                    </div>
-                                    <div class="subtitle">
-                                        Garantujemy jakość i elegancki wygląd
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'images/image1_0.jpg'%}" class="d-block  w-100  " alt="..."> 
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-        </div>
+    .circle-capture {
+        font-weight: 500;
+        font-size: 1rem;
+        margin-top: 15px;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-    </main>
-    <footer class="footer lora">
-        <div class="footer-inner container d-flex h-100">
-            <div class="personal-info col-4 h-100 pt-4 d-block">
-                <div class="location">
-                    <div class="visible">
-                        ŁÓDŹ
-                    </div>
-                    <div class="half-visible">
-                        al. Politechniki 7
-                        <p>93-590 ŁÓDŹ
-                    </div>
-                </div>
-                <div class="name-surname">
-                    <div class="visible">
-                        Danylo Moskovchuk
-                    </div>
-                    <div class="half-visible">
-                        +48 739 064 354
-                        <p>danylomoskovchuk@gmail.com
-                    </div>
+    /* Process section */
+    .process-section {
+        padding: 80px 0;
+        background-color: var(--pure-white);
+    }
 
-                </div>
+    .process-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
 
-            </div>
-            <div class="send-form container pt-4 col-5 h-100">
-                <div class="form container">
-                    <div class="form-title container visible">
-                        NAPISZ DO NAS
-                    </div>
-                    <div class="inputs">
-                        <input type="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
-                        <textarea id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
-                        <p id="enhancedCharCount">Pozostało 200 symbołów</p>
-                    
-                    </div>
-                    <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
-                        <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
-                    </div>
-                </div>
-                
-               
+    .carousel-item img {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
-                
-    
-            </div>
-            <div class="socials d-block lora pt-4 col-3 h-100">
-                <div class="socials-title visible  w-100">Bądż na bieżąco</div>
-                <div class="social my-1  d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img  src="{%static 'images/linkedin.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">LinkedIn</a>
-                    </div>
+    .image-capture {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .title-capt {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle-capt {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    /* Gallery section */
+    .gallery-section {
+        height: 100vh;
+        position: relative;
+    }
+
+    .gallery-carousel .carousel-item {
+        height: 100vh;
+    }
+
+    .gallery-carousel img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .gallery-content {
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+        max-width: 500px;
+        z-index: 10;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-title {
+        font-size: 3.5vw;
+        font-weight: 700;
+        color: var(--pure-white);
+        line-height: 1.2;
+    }
+
+    .gallery-subtitle {
+        font-size: 1.8vw;
+        font-weight: 400;
+        color: var(--pure-white);
+        margin-top: 10px;
+    }
+
+    .popup {
+        position: absolute;
+        width: 300px;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 100;
+    }
+
+    .popup.show {
+        opacity: 1;
+    }
+
+    .popup-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary-black);
+    }
+
+    .popup-content p {
+        margin-bottom: 20px;
+        color: var(--secondary-black);
+    }
+
+    .popup-content .btn {
+        background-color: var(--primary-black);
+        color: var(--pure-white);
+        border: none;
+        padding: 8px 25px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .popup-content .btn:hover {
+        background-color: var(--secondary-black);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 10vw;
+        }
+
+        .hero-subtitle {
+            font-size: 5vw;
+        }
+
+        .gallery-title {
+            font-size: 8vw;
+        }
+
+        .gallery-subtitle {
+            font-size: 4vw;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+
+        .popup {
+            width: 250px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block body_class %}class="home-page"{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-8">
+                <div class="hero-content">
+                    <h1 class="hero-title">{% trans "Beyond The Pool" %}</h1>
+                    <p class="hero-subtitle">{% trans "Pools that exceed expectations" %}</p>
                 </div>
-                <div class="social my-1 d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/instagram.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">Instagram</a>
-                    </div>
-                </div>
-                <div class="social my-1 d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/facebook.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">Facebook</a>
-                    </div>
-                </div>
-                <div class="social my-2 d-flex align-items-center container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/youtube.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">YouTube</a>
-                    </div>
-                </div>
-    
             </div>
         </div>
-        
+    </div>
 
-    </footer>
-    {% block content %}
-    {% endblock %}
+    <div class="see-more">
+        <div class="capture">{% trans "SEE MORE" %}</div>
+        <div class="arrow">
+            <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
+        </div>
+    </div>
+</section>
 
-    {% block scripts %}
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script>
-    <script>
-        
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" data-aos="fade-right">
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="{% static 'images/mdi_like.svg' %}" alt="Quality">
+                    </div>
+                    <div class="circle-capture">
+                        {% trans "WE GUARANTEE QUALITY" %}
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-3 col-sm-6" data-aos="fade-right">
+                <div class="circle-item">
+                    <div class="circle">
+                        <img src="{% static 'images/game-icons_podium-winner.svg' %}" alt="Best">
+                    </div>
+                    <div class="circle-capture">
+                        {% trans "WE ARE THE BEST IN THE REGION" %}
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-3 col-sm-6" data-aos="fade-left">
+                <div class="circle-item">
+                    <div class="circle">
+                        <div class="nums" id="to_100">0</div>
+                    </div>
+                    <div class="circle-capture">
+                        {% trans "COMPLETED PROJECTS" %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6" data-aos="fade-left">
+                <div class="circle-item">
+                    <div class="circle">
+                        <div class="nums" id="to_5">0</div>
+                    </div>
+                    <div class="circle-capture">
+                        {% trans "YEARS OF EXPERIENCE" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+    <div class="container">
+        <h2 class="process-title">{% trans "EXPERIENCE THE PROCESS WITH US" %}</h2>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div id="processCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#processCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/proces1.png' %}" class="d-block w-100" alt="Process Stage 1">
+                            <div class="image-capture">
+                                <div class="title-capt">{% trans "Stage 1" %}</div>
+                                <div class="subtitle-capt">{% trans "Consultation and Design" %}</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/proces2.png' %}" class="d-block w-100" alt="Process Stage 2">
+                            <div class="image-capture">
+                                <div class="title-capt">{% trans "Stage 2" %}</div>
+                                <div class="subtitle-capt">{% trans "Planning and Preparation" %}</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/proces3.png' %}" class="d-block w-100" alt="Process Stage 3">
+                            <div class="image-capture">
+                                <div class="title-capt">{% trans "Stage 3" %}</div>
+                                <div class="subtitle-capt">{% trans "Manufacturing" %}</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/proces1.png' %}" class="d-block w-100" alt="Process Stage 4">
+                            <div class="image-capture">
+                                <div class="title-capt">{% trans "Stage 4" %}</div>
+                                <div class="subtitle-capt">{% trans "Installation" %}</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/proces2.png' %}" class="d-block w-100" alt="Process Stage 5">
+                            <div class="image-capture">
+                                <div class="title-capt">{% trans "Stage 5" %}</div>
+                                <div class="subtitle-capt">{% trans "Final Touches and Handover" %}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#processCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#processCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div id="galleryCarousel" class="carousel slide gallery-carousel" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/image0_0.jpg' %}" alt="Premium Pool 1">
+                <div class="gallery-content">
+                    <h2 class="gallery-title">{% trans "Beyond The Pool" %}</h2>
+                    <p class="gallery-subtitle">{% trans "Pools that exceed expectations" %}</p>
+                </div>
+
+                <!-- Popup that will appear after a delay -->
+                <div class="popup">
+                    <div class="popup-content">
+                        <h3>{% trans "Learn More" %}</h3>
+                        <p>{% trans "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location." %}</p>
+                        <a href="{% url 'basen' %}"><button class="btn">{% trans "More" %}</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/image1_.jpg' %}" alt="Premium Pool 2">
+                <div class="gallery-content">
+                    <h2 class="gallery-title">{% trans "Beyond The Pool" %}</h2>
+                    <p class="gallery-subtitle">{% trans "Your best choice among other options" %}</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/image1_0.jpg' %}" alt="Premium Pool 3">
+                <div class="gallery-content">
+                    <h2 class="gallery-title">{% trans "Beyond The Pool" %}</h2>
+                    <p class="gallery-subtitle">{% trans "We guarantee quality and elegant look" %}</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Initialize AOS animation library
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: "ease-in-out",
+            delay: 0,
+            once: true
+        });
+
+        // Smooth scroll for "See More" button
+        const seeMoreBtn = document.querySelector('.see-more');
+        if (seeMoreBtn) {
+            seeMoreBtn.addEventListener('click', () => {
+                const featuresSection = document.querySelector('.features-section');
+                featuresSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Counters animation
         function countToHundred() {
             const counter = document.getElementById('to_100');
+            if (!counter) return;
+
             const duration = 2000;
             const targetNumber = 100;
             const interval = 10;
@@ -462,137 +515,67 @@ div.fourth-screen{
             const increment = targetNumber / (duration / interval);
 
             const intervalId = setInterval(() => {
-                currentNumber += increment; // Increment the number
+                currentNumber += increment;
                 if (currentNumber >= targetNumber) {
-                    currentNumber = targetNumber; // Ensure it stops exactly at 100
-                    clearInterval(intervalId); // Stop the interval when the target is reached
+                    currentNumber = targetNumber;
+                    clearInterval(intervalId);
                 }
-                counter.textContent = Math.floor(currentNumber); // Update the displayed number
+                counter.textContent = Math.floor(currentNumber);
             }, interval);
         }
 
         function countToFive() {
-            const counter_5 = document.getElementById('to_5');
-            const duration_5 = 2000; 
-            const targetNumber_5 = 5;
-            const interval_5 = 10;
+            const counter = document.getElementById('to_5');
+            if (!counter) return;
 
-            let currentNumber_5 = 0;
-            const increment_5 = targetNumber_5 / (duration_5 / interval_5);
+            const duration = 2000;
+            const targetNumber = 5;
+            const interval = 10;
 
-            const intervalId_5 = setInterval(() => {
-                currentNumber_5 += increment_5;
-                if (currentNumber_5 >= targetNumber_5) {
-                    currentNumber_5 = targetNumber_5;
-                    clearInterval(intervalId_5);
+            let currentNumber = 0;
+            const increment = targetNumber / (duration / interval);
+
+            const intervalId = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= targetNumber) {
+                    currentNumber = targetNumber;
+                    clearInterval(intervalId);
                 }
-                counter_5.textContent = Math.floor(currentNumber_5);
-            }, interval_5);
+                counter.textContent = Math.floor(currentNumber);
+            }, interval);
         }
-        function startCounting() {
-            countToHundred();
-            countToFive(); 
-        }
-        const countersSection = document.getElementById('to_100');
-        const observer = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startCounting();
-                        observer.unobserve(countersSection);
+
+        // Start counters when they're in view
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'to_100') {
+                        countToHundred();
+                    } else if (entry.target.id === 'to_5') {
+                        countToFive();
                     }
-                });
-            },
-            { threshold: 0.8 }
-        );
-        observer.observe(countersSection);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-        
+        const counter100 = document.getElementById('to_100');
+        const counter5 = document.getElementById('to_5');
 
+        if (counter100) observer.observe(counter100);
+        if (counter5) observer.observe(counter5);
 
-
-        // AOS
-
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-  duration: 800, // Длительность анимации (в миллисекундах)
-  offset: 100, // Смещение (в пикселях) перед началом анимации
-  easing: "ease-in-out", // Тип плавности (CSS transition easing)
-  delay: 0, // Задержка (в миллисекундах)
-  once: true, // Анимация происходит только один раз (если false — повторяется при каждом скролле)
-});
-  });
-
-
-
-
-
-
-
-
-
-
-
-//   POP-UP
-
-
-
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Select elements
-    const fourthScreenTitle = document.querySelector('.fourth-screen-title');
-    const popup = document.querySelector('.popup');
-
-    // Timer to trigger the popup
-    setTimeout(() => {
-        // Hide the first-screen-title
-        if (fourthScreenTitle) {
-            fourthScreenTitle.style.display = 'none';
-        }
-
-        // Show the popup with animation
-        if (popup) {
-            popup.classList.add('show');
-        }
-    }, 3000); // 5000ms = 5 seconds
-});
-
-
-
-
-// TEXTAREA
-
-
-
-    const textarea = document.getElementById('enhancedTextarea');
-    const charCount = document.getElementById('enhancedCharCount');
-
-    textarea.addEventListener('input', () => {
-        const remaining = 200 - textarea.value.length;
-        charCount.textContent = `Pozostało ${remaining} symbołów`;
+        // Show popup with delay on the gallery section
+        setTimeout(() => {
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.classList.add('show');
+            }
+        }, 3000);
     });
-
-
-
-
-
-
-    let change = document.querySelector('.color');
-    let header = document.getElementsByTagName('header');
-    change.addEventListener('click', ()=>{
-        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        console.log('lol');
-    });
-
-
-    </script>
-    <script src="{% static 'js/modernizr.custom.js'%}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-    {% endblock %}
-</body>
-</html>
+</script>
+{% endblock %}

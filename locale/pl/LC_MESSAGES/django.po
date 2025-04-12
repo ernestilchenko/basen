@@ -1,0 +1,172 @@
+# Polish translations for the contact page
+msgid ""
+msgstr ""
+"Project-Id-Version: Beyond The Pool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-11 12:00+0000\n"
+"PO-Revision-Date: 2025-03-11 12:00+0000\n"
+"Last-Translator: Danylo Moskovchuk\n"
+"Language-Team: Polish\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+# Contact view messages
+msgid "New message from {email}"
+msgstr "Nowa wiadomość od {email}"
+
+msgid "Message has been sent!"
+msgstr "Wiadomość została wysłana!"
+
+msgid "An error occurred while sending the message."
+msgstr "Wystąpił błąd podczas wysyłania wiadomości."
+
+# Contact page
+msgid "Beyond The Pool - Contact"
+msgstr "Beyond The Pool - Kontakt"
+
+msgid "Beyond The Pool"
+msgstr "Beyond The Pool"
+
+msgid "Łódż"
+msgstr "Łódż"
+
+msgid "al.Politechiki 7"
+msgstr "al.Politechiki 7"
+
+msgid "93-574 Łódż"
+msgstr "93-574 Łódż"
+
+msgid "Representative"
+msgstr "Przedstawiciel"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Roman Beznosenko"
+msgstr "Roman Beznosenko"
+
+# Footer translations
+msgid "ŁÓDŹ"
+msgstr "ŁÓDŹ"
+
+msgid "al. Politechniki 7"
+msgstr "al. Politechniki 7"
+
+msgid "93-590 ŁÓDŹ"
+msgstr "93-590 ŁÓDŹ"
+
+msgid "Danylo Moskovchuk"
+msgstr "Danylo Moskovchuk"
+
+msgid "WRITE TO US"
+msgstr "NAPISZ DO NAS"
+
+msgid "Please enter your email here..."
+msgstr "Proszę wpisać email tutaj..."
+
+msgid "Please enter your message here..."
+msgstr "Proszę wpisać wiadomość tutaj..."
+
+msgid "200 characters remaining"
+msgstr "Pozostało 200 znaków"
+
+msgid "characters remaining"
+msgstr "znaków pozostało"
+
+msgid "SEND"
+msgstr "WYŚLIJ"
+
+msgid "Stay up to date"
+msgstr "Bądź na bieżąco"
+
+# Navigation
+msgid "POOL TYPES"
+msgstr "RODZAJE BASENÓW"
+
+msgid "GALLERY"
+msgstr "GALERIA"
+
+msgid "EXAMPLE"
+msgstr "PRZYKŁAD"
+
+msgid "ABOUT US"
+msgstr "O FIRMIE"
+
+msgid "CONTACT"
+msgstr "KONTAKT"
+
+# Home page
+msgid "Beyond The Pool - Premium Pools"
+msgstr "Beyond The Pool - Baseny Premium"
+
+msgid "Pools that exceed expectations"
+msgstr "Baseny, które przekraczają oczekiwania"
+
+msgid "SEE MORE"
+msgstr "ZOBACZ WIĘCEJ"
+
+msgid "WE GUARANTEE QUALITY"
+msgstr "GWARANTUJEMY JAKOŚĆ"
+
+msgid "WE ARE THE BEST IN THE REGION"
+msgstr "JESTEŚMY NAJLEPSI W SWOIM REGIONIE"
+
+msgid "COMPLETED PROJECTS"
+msgstr "ZREALIZOWANYCH PROJEKTÓW"
+
+msgid "YEARS OF EXPERIENCE"
+msgstr "LAT DOŚWIADCZENIA"
+
+msgid "EXPERIENCE THE PROCESS WITH US"
+msgstr "PRZEŻYJ TEN PROCES Z NAMI"
+
+msgid "Stage 1"
+msgstr "Etap 1"
+
+msgid "Consultation and Design"
+msgstr "Konsultacja i projektowanie"
+
+msgid "Stage 2"
+msgstr "Etap 2"
+
+msgid "Planning and Preparation"
+msgstr "Planowanie i przygotowanie"
+
+msgid "Stage 3"
+msgstr "Etap 3"
+
+msgid "Manufacturing"
+msgstr "Produkcja"
+
+msgid "Stage 4"
+msgstr "Etap 4"
+
+msgid "Installation"
+msgstr "Instalacja"
+
+msgid "Stage 5"
+msgstr "Etap 5"
+
+msgid "Final Touches and Handover"
+msgstr "Wykończenie i przekazanie"
+
+msgid "Your best choice among other options"
+msgstr "Najlepszy twój wybór spośród innych wariantów"
+
+msgid "We guarantee quality and elegant look"
+msgstr "Gwarantujemy jakość i elegancki wygląd"
+
+msgid "Learn More"
+msgstr "Dowiedz się więcej"
+
+msgid "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+msgstr "Oferujemy najlepszy wybór basenów ze stali nierdzewnej. Przeprowadzamy cały proces od projektowania, do instalacji gotowego produktu w dowolnej lokalizacji."
+
+msgid "More"
+msgstr "Więcej"

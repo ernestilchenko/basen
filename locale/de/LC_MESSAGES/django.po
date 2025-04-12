@@ -1,0 +1,171 @@
+# German translations for the contact page
+msgid ""
+msgstr ""
+"Project-Id-Version: Beyond The Pool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-11 12:00+0000\n"
+"PO-Revision-Date: 2025-03-11 12:00+0000\n"
+"Last-Translator: Danylo Moskovchuk\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Contact view messages
+msgid "New message from {email}"
+msgstr "Neue Nachricht von {email}"
+
+msgid "Message has been sent!"
+msgstr "Nachricht wurde gesendet!"
+
+msgid "An error occurred while sending the message."
+msgstr "Beim Senden der Nachricht ist ein Fehler aufgetreten."
+
+# Contact page
+msgid "Beyond The Pool - Contact"
+msgstr "Beyond The Pool - Kontakt"
+
+msgid "Beyond The Pool"
+msgstr "Beyond The Pool"
+
+msgid "Łódż"
+msgstr "Łódż"
+
+msgid "al.Politechiki 7"
+msgstr "al.Politechiki 7"
+
+msgid "93-574 Łódż"
+msgstr "93-574 Łódż"
+
+msgid "Representative"
+msgstr "Vertreter"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "E-mail"
+msgstr "E-Mail"
+
+msgid "Roman Beznosenko"
+msgstr "Roman Beznosenko"
+
+# Footer translations
+msgid "ŁÓDŹ"
+msgstr "ŁÓDŹ"
+
+msgid "al. Politechniki 7"
+msgstr "al. Politechniki 7"
+
+msgid "93-590 ŁÓDŹ"
+msgstr "93-590 ŁÓDŹ"
+
+msgid "Danylo Moskovchuk"
+msgstr "Danylo Moskovchuk"
+
+msgid "WRITE TO US"
+msgstr "SCHREIBEN SIE UNS"
+
+msgid "Please enter your email here..."
+msgstr "Bitte geben Sie Ihre E-Mail-Adresse hier ein..."
+
+msgid "Please enter your message here..."
+msgstr "Bitte geben Sie Ihre Nachricht hier ein..."
+
+msgid "200 characters remaining"
+msgstr "Noch 200 Zeichen übrig"
+
+msgid "characters remaining"
+msgstr "Zeichen übrig"
+
+msgid "SEND"
+msgstr "SENDEN"
+
+msgid "Stay up to date"
+msgstr "Bleiben Sie auf dem Laufenden"
+
+msgid "POOL TYPES"
+msgstr "POOL-TYPEN"
+
+msgid "GALLERY"
+msgstr "GALERIE"
+
+msgid "EXAMPLE"
+msgstr "BEISPIEL"
+
+msgid "ABOUT US"
+msgstr "ÜBER UNS"
+
+msgid "CONTACT"
+msgstr "KONTAKT"
+
+# Home page
+msgid "Beyond The Pool - Premium Pools"
+msgstr "Beyond The Pool - Premium Schwimmbecken"
+
+msgid "Pools that exceed expectations"
+msgstr "Schwimmbäder, die Erwartungen übertreffen"
+
+msgid "SEE MORE"
+msgstr "MEHR SEHEN"
+
+msgid "WE GUARANTEE QUALITY"
+msgstr "WIR GARANTIEREN QUALITÄT"
+
+msgid "WE ARE THE BEST IN THE REGION"
+msgstr "WIR SIND DIE BESTEN IN DER REGION"
+
+msgid "COMPLETED PROJECTS"
+msgstr "ABGESCHLOSSENE PROJEKTE"
+
+msgid "YEARS OF EXPERIENCE"
+msgstr "JAHRE ERFAHRUNG"
+
+msgid "EXPERIENCE THE PROCESS WITH US"
+msgstr "ERLEBEN SIE DEN PROZESS MIT UNS"
+
+msgid "Stage 1"
+msgstr "Phase 1"
+
+msgid "Consultation and Design"
+msgstr "Beratung und Design"
+
+msgid "Stage 2"
+msgstr "Phase 2"
+
+msgid "Planning and Preparation"
+msgstr "Planung und Vorbereitung"
+
+msgid "Stage 3"
+msgstr "Phase 3"
+
+msgid "Manufacturing"
+msgstr "Herstellung"
+
+msgid "Stage 4"
+msgstr "Phase 4"
+
+msgid "Installation"
+msgstr "Installation"
+
+msgid "Stage 5"
+msgstr "Phase 5"
+
+msgid "Final Touches and Handover"
+msgstr "Letzte Feinheiten und Übergabe"
+
+msgid "Your best choice among other options"
+msgstr "Ihre beste Wahl unter anderen Optionen"
+
+msgid "We guarantee quality and elegant look"
+msgstr "Wir garantieren Qualität und elegantes Aussehen"
+
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+msgid "We offer the best selection of stainless steel pools. We handle the entire process from design to installation of the finished product at any location."
+msgstr "Wir bieten die beste Auswahl an Edelstahlpools. Wir übernehmen den gesamten Prozess vom Design bis zur Installation des fertigen Produkts an jedem Standort."
+
+msgid "More"
+msgstr "Mehr"

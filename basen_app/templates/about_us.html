@@ -1,412 +1,447 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto|Open+Sans:300,400,700">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+{% block title %}Beyond The Pool - O Firmie{% endblock %}
 
+{% block extra_css %}
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'scss/style.scss' %}">
-    <title>Beyond The Pool</title>
-    <title>Ultimate</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block body_class %}start{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">
-    <style>
+{% block extra_style %}
+/* First Screen */
+.first-screen {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'images/image0_0.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    color: var(--pure-white);
+    position: relative;
+}
 
-div.fourth-screen{
-            height: 100vh;
-          
-            div.carousel.slide{
-                height: calc(100vh - 5px);
-                
-                div.carousel-inner{
-                    width: 100%;
-                    
-                    div.carousel-item{
-                        div.carousel-item-inner{
-                            div.big-title{
-                                position: absolute;
-                                div.first-screen-title{
-                                    margin-left: auto;
-                                    text-align: right;
-                                    font-size: 5vw;
-                                    word-wrap: break-word;
-                                    color: white;
-                                    div.capture{
-                                        padding-top: 70px;
-                                        display: block;
-                                        height: auto;
-                                        line-height:12vh;
-                                        /* border: 5px solid transparent;  
-                                        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
-                                        background: rgba(66, 79, 101, 0.3); */
-                                        div.title{
-                                            font-weight: 700;
-                                            z-index: 1;
-                                        }
-                                        div.subtitle{
-                                            position: relative;
-                                            top: -20px;
-                                            font-weight: 400;
-                                            z-index: 1; 
-                                        }
-                                    }    
-                                }
-                            }
-                            img{
-                               
-                                height: calc(100vh - 5px);
-                                width: 100%;
-                                object-fit: cover; /* Ensure the image covers the space */
-                                object-position: center;
-                            }
-                        }
-                        
-                      
-                    }
-                    
+.first-screen-title {
+    margin-left: auto;
+    text-align: right;
+}
 
-                }
-            }
+.first-screen .title {
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
-        }
-        
-    </style>
-</head>
-<body class="start">
-    <!-- <div class="header">
-        <header class="header row col-12 align-items-center">
-            <a href="{% url 'home' %}" class="col-5 align-items-center">
-                <div class="centre">
-                    <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                    <text class="logo lora">Beyond The Pool</text>
-                </div>
-            </a>
-            <nav class="nav-menu col-7 align-items-center">
-                <a href="{% url 'basen' %}" class="nav-link lora">RODZAJE BASENÓW</a>
-                <a href="#" class="nav-link lora">GALERIA</a>
-                <a href="#" class="nav-link lora">SERWIS</a>
-                <a href="#" class="nav-link lora">O FIRMIE</a>
-                <a href="#" class="nav-link lora">KONTAKT</a>
-                <a href="#" class="nav-link lora">USTAWIENIA</a>
-            </nav>
-        </header>
-    </div> -->
+.first-screen .subtitle {
+    font-size: 2.5vw;
+    font-weight: 400;
+    line-height: 1.3;
+}
 
+/* See More Button - Centered */
+.see-more {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    color: var(--pure-white);
+    font-weight: 600;
+    cursor: pointer;
+}
 
+.see-more .capture {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
 
-    <header class="header sticky-top flex-wrap justify-content-center">
-        <div class="container col-10 d-flex">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <img src="{% static 'images/image4.png' %}" alt="Diamant Logo" class="logo">
-                <text class="logo lora">Beyond The Pool</text>
-            </a>
-    
-            <ul class="nav d-flex align-items-center">
-                <li class="nav-item"><a href="basen/" class="nav-link lora">RODZAJE BASENÓW</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">GALERIA</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">PRZYKŁAD</a></li>
-                <li class="nav-item"><a href="#" class="nav-link lora">O FIRMIE</a></li>
-                <li class="nav-item"><a href="contact/" class="nav-link lora">KONTAKT</a></li>
-                
-                <!-- Dropdown for USTAWIENIA -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link lora dropdown-toggle" href="#" id="ustawieniaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        USTAWIENIA
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="ustawieniaDropdown">
-                        <li><button class="btn color btp-primary">DARK</button></li>
-                        <li><a class="dropdown-item" href="#"><select name="lang" id="">
-                            <option value="english">english</option>
-                            <option value="polish">polish</option>
-                        </select></a></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    
-    <main>
-        <div class="first-screen d-grid">
-            <div class="big-title container col-10 d-flex align-items-center">
-                <div class="first-screen-title   col-10 ">
-                    <div class="capture">
-                        <div class="title">
-                            Beyond the pool
-                        </div>
-                        <div class="subtitle">
-                            Baseny, które przekraczają oczekiwania
-                        </div>
+.see-more .arrow img {
+    width: 30px;
+    filter: invert(1);
+    margin: 0 auto;
+    display: block;
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Fourth Screen (Carousel) */
+.fourth-screen {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.fourth-screen .carousel,
+.fourth-screen .carousel-inner,
+.fourth-screen .carousel-item {
+    height: 100vh;
+}
+
+.fourth-screen img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item-inner {
+    position: relative;
+    height: 100%;
+}
+
+.big-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.fourth-screen-title {
+    margin-left: auto;
+    text-align: right;
+    padding-top: 100px;
+}
+
+.fourth-screen .title {
+    font-size: 5vw;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fourth-screen .subtitle {
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 0;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    max-width: 80%;
+    width: 500px;
+    z-index: 20;
+    text-align: center;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup h3 {
+    color: var(--primary-black);
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+}
+
+.popup p {
+    color: var(--secondary-black);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Second Screen */
+.second-screen {
+    padding: 100px 0;
+    background-color: var(--off-white);
+}
+
+.circle-item {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.circle img {
+    width: 60px;
+    height: 60px;
+    filter: invert(1);
+}
+
+.nums {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.circle-capture {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--primary-black);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Social Media Links */
+.socials {
+    text-align: right;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    margin-left: 15px;
+}
+
+.social a {
+    color: var(--pure-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--light-gray);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .first-screen .title, .fourth-screen .title {
+        font-size: 8vw;
+    }
+
+    .first-screen .subtitle, .fourth-screen .subtitle {
+        font-size: 4vw;
+    }
+
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nums {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .socials {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .first-screen-title, .fourth-screen-title {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .circle-item {
+        margin-bottom: 30px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .personal-info, .send-form, .socials {
+        width: 100%;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- First Screen -->
+    <div class="first-screen d-grid">
+        <div class="big-title container col-10 d-flex align-items-center">
+            <div class="first-screen-title col-10">
+                <div class="capture">
+                    <div class="title">
+                        Beyond the pool
+                    </div>
+                    <div class="subtitle">
+                        Baseny, które przekraczają oczekiwania
                     </div>
                 </div>
             </div>
-            
-            <div class="see-more">
-                <div class="capture">
-                    ZOBACZ WIĘCEJ
-                </div>
-                <div class="arrow d-block ">
-                    <img src="{% static 'images/weui_arrow-filled.svg'%}" alt="" class="moving-image">
-                </div>
-            </div>
-
         </div>
 
-        <div class="fourth-screen pt-1 ">
-            <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner w-100">
-                    <div class="carousel-item item_1 active">
-                        <div class="carousel-item-inner d-flex align-items-center">
-                            <div class="big-title container col-10 d-flex align-self-center align-items-center m-auto">
-                                <div class="fourth-screen-title col-10">
-                                    <div class="capture">
-                                        <div class="title">
-                                            Beyond the pool
-                                        </div>
-                                        <div class="subtitle">
-                                            Baseny, które przekraczają oczekiwania
-                                        </div>
+        <!-- Fixed centered See More button -->
+        <div class="see-more">
+            <div class="capture">
+                ZOBACZ WIĘCEJ
+            </div>
+            <div class="arrow">
+                <img src="{% static 'images/weui_arrow-filled.svg' %}" alt="" class="moving-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Fourth Screen (Carousel) -->
+    <div class="fourth-screen pt-1">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-item-inner d-flex align-items-center">
+                        <div class="big-title container col-10 d-flex align-items-center">
+                            <div class="fourth-screen-title col-10">
+                                <div class="capture">
+                                    <div class="title">
+                                        Beyond the pool
+                                    </div>
+                                    <div class="subtitle">
+                                        Baseny, które przekraczają oczekiwania
                                     </div>
                                 </div>
                             </div>
-                            <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
-                    
-                            <!-- Pop-up -->
-                            <div class="popup">
-                                <div class="popup-content">
-                                    <h3 lora>Beyond The Pool</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at quam et enim tristique laoreet. Proin ac lacus id orci volutpat lacinia sit amet a leo. Sed auctor, arcu at pretium tincidunt, dui tortor elementum odio, a pretium velit velit nec libero. Integer ac cursus libero. Nunc ac eros a tortor euismod pretium. Phasellus iaculis magna ac arcu facilisis, euismod feugiat odio malesuada. Fusce placerat orci nec arcu efficitur
-                                    </p>
-                                </div>
+                        </div>
+                        <img src="{% static 'images/image0_0.jpg' %}" class="d-block w-100" alt="...">
+
+                        <!-- Pop-up -->
+                        <div class="popup">
+                            <div class="popup-content">
+                                <h3>Beyond The Pool</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at quam et enim
+                                    tristique laoreet. Proin ac lacus id orci volutpat lacinia sit amet a leo. Sed
+                                    auctor, arcu at pretium tincidunt, dui tortor elementum odio, a pretium velit velit
+                                    nec libero. Integer ac cursus libero. Nunc ac eros a tortor euismod pretium.
+                                    Phasellus iaculis magna ac arcu facilisis, euismod feugiat odio malesuada. Fusce
+                                    placerat orci nec arcu efficitur
+                                </p>
                             </div>
                         </div>
                     </div>
-                  </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
 
-        <div class="second-screen">
-            <div class="second-screen-inner">
-                <div class="content">
-                    <div  class="circles container col-10">
-                        <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
-                                <img src="{%static 'images/mdi_like.svg'%}" alt="">
-                            </div>
-                            <div class="circle-capture">
-                                GARANTUJEMY JAKOŚĆ
+    <!-- Second Screen -->
+    <div class="second-screen">
+        <div class="second-screen-inner">
+            <div class="content">
+                <div class="circles container row justify-content-center mx-auto">
+                    <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
+                        <div class="circle">
+                            <img src="{% static 'images/mdi_like.svg' %}" alt="">
+                        </div>
+                        <div class="circle-capture">
+                            GARANTUJEMY JAKOŚĆ
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" class="circle-item col-md-3 col-sm-6">
+                        <div class="circle">
+                            <img src="{% static 'images/game-icons_podium-winner.svg' %}" alt="">
+                        </div>
+                        <div class="circle-capture">
+                            JESTEŚMY NAJLEPSI W SWOIM REGIONIE
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
+                        <div class="circle">
+                            <div class="nums" id="to_100">
+                                0
                             </div>
                         </div>
-                        <div div data-aos="fade-right"  class="circle-item col-3">
-                            <div class="circle">
-                                <img src="{%static 'images/game-icons_podium-winner.svg'%}" alt="">
-                            </div>
-                            <div class="circle-capture">
-                                JESTEŚMY NAJLEPSI W SWOIM REGIONIE
+                        <div class="circle-capture">
+                            ZREALIZOWANYCH ZLECEŃ
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="circle-item col-md-3 col-sm-6">
+                        <div class="circle">
+                            <div class="nums" id="to_5">
+                                0
                             </div>
                         </div>
-                        <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
-                                <div class="nums" id="to_100">
-                                    0
-                                </div>
-                            </div>
-                            <div class="circle-capture">
-                                ZREALIZOWANYCH ZLECEŃ
-                            </div>
+                        <div class="circle-capture">
+                            LAT W TEJ SPRAWIE
                         </div>
-                        <div div data-aos="fade-left"  class="circle-item col-3">
-                            <div class="circle">
-                                <div class="nums" id="to_5">
-                                    0
-                                </div>                            
-                            </div>
-                            <div class="circle-capture">
-                                LAT W TEJ SPRAWIE 
-                            </div>
-                        </div>
-    
                     </div>
                 </div>
-            </div>
-        </div>
-        
-
-    </main>
-    <footer class="footer lora">
-        <div class="footer-inner container d-flex h-100">
-            <div class="personal-info col-4 h-100 pt-4 d-block">
-                <div class="location">
-                    <div class="visible">
-                        ŁÓDŹ
-                    </div>
-                    <div class="half-visible">
-                        al. Politechniki 7
-                        <p>93-590 ŁÓDŹ
-                    </div>
-                </div>
-                <div class="name-surname">
-                    <div class="visible">
-                        Danylo Moskovchuk
-                    </div>
-                    <div class="half-visible">
-                        +48 739 064 354
-                        <p>danylomoskovchuk@gmail.com
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="send-form container pt-4 col-5 h-100">
-                <div class="form container">
-                    <div class="form-title container visible">
-                        NAPISZ DO NAS
-                    </div>
-                    <div class="inputs">
-                        <input type="email" placeholder="Proszę wpisać email tutaj..." class="form-control border border-secondary rounded my-3">
-                        <textarea id="enhancedTextarea" class="form-control w-100 my-3" rows="4" maxlength="200" placeholder="Proszę wpisać text tutaj..."></textarea>
-                        <p id="enhancedCharCount">Pozostało 200 symbołów</p>
-                    
-                    </div>
-                    <div class="button-send position-relative  w-100 d-flex pe-3" style="top:-10px;">
-                        <button class="btn btn-primary me-auto ms-auto">WYŚLIJ</button>
-                    </div>
-                </div>
-                
-               
-
-                
-    
-            </div>
-            <div class="socials d-block lora pt-4 col-3 h-100">
-                <div class="socials-title visible  w-100">Bądż na bieżąco</div>
-                <div class="social my-1  d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img  src="{%static 'images/linkedin.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="social my-1 d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/instagram.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">Instagram</a>
-                    </div>
-                </div>
-                <div class="social my-1 d-flex align-items-center  container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/facebook.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">Facebook</a>
-                    </div>
-                </div>
-                <div class="social my-2 d-flex align-items-center container">
-                    <div class="col-1"></div>
-                    <div class="icon col-2">
-                        <img src="{%static 'images/youtube.svg'%}" alt="">
-                    </div>
-                    <div class="capture col-6">
-                        <a class="half-visible" href="">YouTube</a>
-                    </div>
-                </div>
-    
             </div>
         </div>
-        
+    </div>
+</main>
+{% endblock %}
 
-    </footer>
-    {% block content %}
-    {% endblock %}
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize on document load
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: "ease-in-out",
+            delay: 0,
+            once: true,
+        });
 
-    {% block scripts %}
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script>
-    <script>
-        
-
-
-        function countToHundred() {
-            const counter = document.getElementById('to_100');
-            const duration = 2000;
-            const targetNumber = 100;
-            const interval = 10;
-
-            let currentNumber = 0;
-            const increment = targetNumber / (duration / interval);
-
-            const intervalId = setInterval(() => {
-                currentNumber += increment; // Increment the number
-                if (currentNumber >= targetNumber) {
-                    currentNumber = targetNumber; // Ensure it stops exactly at 100
-                    clearInterval(intervalId); // Stop the interval when the target is reached
-                }
-                counter.textContent = Math.floor(currentNumber); // Update the displayed number
-            }, interval);
-        }
-
-        function countToFive() {
-            const counter_5 = document.getElementById('to_5');
-            const duration_5 = 2000; 
-            const targetNumber_5 = 5;
-            const interval_5 = 10;
-
-            let currentNumber_5 = 0;
-            const increment_5 = targetNumber_5 / (duration_5 / interval_5);
-
-            const intervalId_5 = setInterval(() => {
-                currentNumber_5 += increment_5;
-                if (currentNumber_5 >= targetNumber_5) {
-                    currentNumber_5 = targetNumber_5;
-                    clearInterval(intervalId_5);
-                }
-                counter_5.textContent = Math.floor(currentNumber_5);
-            }, interval_5);
-        }
-        function startCounting() {
-            countToHundred();
-            countToFive(); 
-        }
+        // Set up intersection observer for counter animations
         const countersSection = document.getElementById('to_100');
         const observer = new IntersectionObserver(
             (entries, observer) => {
@@ -417,96 +452,75 @@ div.fourth-screen{
                     }
                 });
             },
-            { threshold: 0.8 }
+            {threshold: 0.8}
         );
-        observer.observe(countersSection);
 
-        
-
-
-
-        // AOS
-
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-  duration: 800, // Длительность анимации (в миллисекундах)
-  offset: 100, // Смещение (в пикселях) перед началом анимации
-  easing: "ease-in-out", // Тип плавности (CSS transition easing)
-  delay: 0, // Задержка (в миллисекундах)
-  once: true, // Анимация происходит только один раз (если false — повторяется при каждом скролле)
-});
-  });
-
-
-
-
-
-
-
-
-
-
-
-//   POP-UP
-
-
-
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Select elements
-    const fourthScreenTitle = document.querySelector('.fourth-screen-title');
-    const popup = document.querySelector('.popup');
-
-    // Timer to trigger the popup
-    setTimeout(() => {
-        // Hide the first-screen-title
-        if (fourthScreenTitle) {
-            fourthScreenTitle.style.display = 'none';
+        // Start observing the counter section
+        if (countersSection) {
+            observer.observe(countersSection);
         }
 
-        // Show the popup with animation
-        if (popup) {
-            popup.classList.add('show');
-        }
-    }, 3000); // 5000ms = 5 seconds
-});
+        // Show popup after delay
+        setTimeout(() => {
+            const fourthScreenTitle = document.querySelector('.fourth-screen-title');
+            const popup = document.querySelector('.popup');
 
+            if (fourthScreenTitle) {
+                fourthScreenTitle.style.display = 'none';
+            }
 
-
-
-// TEXTAREA
-
-
-
-    const textarea = document.getElementById('enhancedTextarea');
-    const charCount = document.getElementById('enhancedCharCount');
-
-    textarea.addEventListener('input', () => {
-        const remaining = 200 - textarea.value.length;
-        charCount.textContent = `Pozostało ${remaining} symbołów`;
+            if (popup) {
+                popup.classList.add('show');
+            }
+        }, 3000);
     });
 
+    // Counting animation functions
+    function countToHundred() {
+        const counter = document.getElementById('to_100');
+        if (!counter) return;
 
+        const duration = 2000;
+        const targetNumber = 100;
+        const interval = 10;
 
+        let currentNumber = 0;
+        const increment = targetNumber / (duration / interval);
 
+        const intervalId = setInterval(() => {
+            currentNumber += increment;
+            if (currentNumber >= targetNumber) {
+                currentNumber = targetNumber;
+                clearInterval(intervalId);
+            }
+            counter.textContent = Math.floor(currentNumber);
+        }, interval);
+    }
 
+    function countToFive() {
+        const counter_5 = document.getElementById('to_5');
+        if (!counter_5) return;
 
-    let change = document.querySelector('.color');
-    let header = document.getElementsByTagName('header');
-    change.addEventListener('click', ()=>{
-        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        console.log('lol');
-    });
+        const duration_5 = 2000;
+        const targetNumber_5 = 5;
+        const interval_5 = 10;
 
+        let currentNumber_5 = 0;
+        const increment_5 = targetNumber_5 / (duration_5 / interval_5);
 
-    </script>
-    <script src="{% static 'js/modernizr.custom.js'%}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-    {% endblock %}
-</body>
-</html>
+        const intervalId_5 = setInterval(() => {
+            currentNumber_5 += increment_5;
+            if (currentNumber_5 >= targetNumber_5) {
+                currentNumber_5 = targetNumber_5;
+                clearInterval(intervalId_5);
+            }
+            counter_5.textContent = Math.floor(currentNumber_5);
+        }, interval_5);
+    }
+
+    function startCounting() {
+        countToHundred();
+        countToFive();
+    }
+</script>
+{% endblock %}
